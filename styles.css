@@ -1,4 +1,5 @@
 /*  */
 body {
   background-image: url(./media/pictures/Main-BG.png);
+  background-repeat: repeat-y;
 }
