@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<script src="./app.js" ></script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./flexboxgrid.css" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./helper-class.css" />
+
     <title>New Tab.</title>
   </head>
   <body>
@@ -33,22 +34,19 @@
       <!-- 2. SLAIDS -->
     <div class="slide" id="slide-2">
         <input type="text" placeholder="enter your name" id="name" />
-        <!-- <div class="character-box">
-          <div class="triangle left">
-            <img src="./media/pictures/arrow.png" id="arrow-left" alt="arrow-left">
-          </div>
-          <figure class="character">
-            <img width="250px" src="./media/pictures/knight.png" alt="" />
-          </figure>
-          <div class="triangle right"></div>
-            <img src="./media/pictures/arrow.png" id="arrow-left" alt="arrow-left">
-        </div> -->
         <div class="character-box">
-          <img src="./media/pictures/arrow.png" class="arrow-left" alt="" role="button" onclick="prev()">
+          
+          <div class="arrowContainer">
+            <img src="./media/pictures/arrow.png" class="arrow-left" alt="" role="button" onclick="prev()">
+          </div>
+          
           <figure>
             <img src="./media/pictures/knight.png" class="character">
           </figure>
-          <img src="./media/pictures/arrow.png" class="arrow-right" alt="" role="button" onclick="next()">
+          
+          <div class="arrowContainer">
+            <img src="./media/pictures/arrow.png" class="arrow-right" alt="" role="button" onclick="next()">
+          </div>
         </div> -->
 
         <button
@@ -76,7 +74,7 @@
       <!-- 6. SLAIDS -->
       <!-- 7. SLAIDS -->
     </div>
-
+    <script src="./app.js" ></script>
 
 
   </body>
