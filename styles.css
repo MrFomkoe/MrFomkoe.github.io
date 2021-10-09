@@ -11,13 +11,13 @@ html {
   height: 100%;
 }
 
-/* #root {
+#root {
   display: flex;
   flex-direction: column;
   height: 100%;
   align-items: center;
   justify-content: center;
-} */
+}
 
 body {
   background-color: hsl(219, 79%, 66%);
