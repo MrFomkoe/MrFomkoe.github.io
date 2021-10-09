@@ -5,14 +5,25 @@ function clickHandler() {
   }
 
 
-  function changeLeft() {
-      alert;
-    var imageId = document.getElementById("getImage");
+var imageId = document.querySelector('.character');
+var images = ['knight.png', 'mage-2.png', 'archer-2.png'];
+var i = 0;
 
-    if (imageId.src.match("./media/pictures/knight.png")) {
-        imageId = "./media/pictures/knight.png";
-    } else {
-        imageId = "./media/pictures/mage.png";
-    }
+function prev(){
+    if (i <= 0)
+        i = images.length;
+        --i;
+        return setImg();
+}
 
-  } 
+function next(){
+    if (i >= images.length-1)
+        i = -1;
+        i++;
+        return setImg();
+}
+
+function setImg(){
+    return imageId.setAttribute('src', './media/pictures/' + images[i]);
+}
+      

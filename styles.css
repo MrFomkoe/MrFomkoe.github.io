@@ -196,19 +196,34 @@ input {
   display: flex;
   align-items: center;
   margin: 15em 10em 0 10em;
-  border: 2px solid white;
+
 }
 
-#knight {
-  width: 12vw;
-}
+.character {
+  height: 250px;
+  width: 250px;
+  position: relative;
 
-#mage {
-  width: 5vw;
+  object-fit:scale-down;
 }
 
 /* Arrows styling */
-#triangle-left {
+
+.arrow-right:hover, .arrow-left:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.arrow-right, .arrow-left {
+  width: 100px;
+  object-fit:contain;
+}
+
+.arrow-left {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+/* #triangle-left {
   width: 0;
   height: 0;
   border-top: 4vw solid transparent;
@@ -228,7 +243,9 @@ input {
   border-radius: 20%;
   cursor: pointer;
   opacity: 0.8;
-}
+} */
+
+
 
 .box {
   background: rgba(255, 255, 255, 0.3);

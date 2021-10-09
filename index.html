@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<script src="./app.js" ></script>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +8,6 @@
     <link rel="stylesheet" href="./flexboxgrid.css" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./helper-class.css" />
-    <!-- <script src="./app.js"></script> -->
     <title>New Tab.</title>
   </head>
   <body>
@@ -44,12 +44,12 @@
             <img src="./media/pictures/arrow.png" id="arrow-left" alt="arrow-left">
         </div> -->
         <div class="character-box">
-          <img src="./media/pictures/arrow.png" id="arrow-left" alt=" " onclick="changeLeft()">
-
-          <figure class="character">
-            <!-- <img src="./media/pictures/knight.png" id="getImage"> -->
+          <img src="./media/pictures/arrow.png" class="arrow-left" alt="" role="button" onclick="prev()">
+          <figure>
+            <img src="./media/pictures/knight.png" class="character">
           </figure>
-
+          <img src="./media/pictures/arrow.png" class="arrow-right" alt="" role="button" onclick="next()">
+        </div> -->
 
         <button
           type="button"
@@ -81,19 +81,4 @@
 
   </body>
 
-  <script>
-    function changeLeft(){
-
-      var imageId = document.getElementById("getImage");
-      
-      if (imageId.src = "./media/pictures/mage.png"){
-        imageId.src = "./media/pictures/mage.png";
-        imageId.src = "./media/pictures/knight-2.png"
-      } else {
-        imageId.src = "./media/pictures/knight.png";
-      }
-      // alert("works");
-    }
-
-</script>
 </html>
