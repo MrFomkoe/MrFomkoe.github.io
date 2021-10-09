@@ -4,20 +4,63 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles.css">
-    <title>Game</title>
+    <link rel="stylesheet" href="/flexboxgrid.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/helper-class.css" />
+    <title>New Tab.</title>
   </head>
   <body>
     <div class="container">
-      <div class="Vitalijs">
-
+      <!-- 1. SLAIDS -->
+      <div class="slide" id="slide-1">
+        <ul class="navbar">
+          <li>
+            <a href=""><span>about us</span></a>
+          </li>
+          <li>
+            <a href=""><span>login</span></a>
+          </li>
+          <li>
+            <a href=""><span>scoreboard</span></a>
+          </li>
+        </ul>
+        <div class="start">
+          <a href="#slide-2"><span>start</span></a>
+        </div>
       </div>
-      <div class="Romans">
 
+      <!-- 2. SLAIDS -->
+      <div class="slide" id="slide-2">
+        <input type="text" placeholder="enter your name" id="name" />
+        <div class="character-box">
+          <div class="triangle left"></div>
+          <figure class="character">
+            <img width="250px" src="/media/pictures/knight.png" alt="" />
+          </figure>
+          <div class="triangle right"></div>
+        </div>
+        <button
+          type="button"
+          onclick="clickHandler()"
+          class="button button-confirm"
+        >
+          confirm
+        </button>
       </div>
-      <div class="Matiss">
 
-      </div>
+      <!-- 3. SLAIDS -->
+      <!-- 4. SLAIDS -->
+      <!-- 5. SLAIDS -->
+      <!-- 6. SLAIDS -->
+      <!-- 7. SLAIDS -->
     </div>
+
+    <script>
+      function clickHandler() {
+        let name = document.getElementById("name").value;
+        confirm("Hi, " + name + "! Are you ready for some game?");
+        document.getElementById("name");
+      }
+    </script>
   </body>
 </html>
