@@ -29,40 +29,55 @@
         </div>
         <a href="#slide-2" class="btn primary size--s"><h1>start</h1></a>
       </div>
-
       <!-- 2. SLAIDS -->
-    <div class="slide" id="slide-2">
-      <div class="content-wrapper">
-        <div class="close"><a href="#slide-1"><span>x</span></a></div>
-        <h4 class="heading-content">Hi, there!</h4>
-        <p class="margin-bottom--16">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
-          recusandae porro temporibus distinctio impedit aperiam iure quae
-          cumque placeat. Asperiores quis ipsa expedita aliquid at? Magni
-          voluptate voluptas quisquam voluptatum.
-        </p>
-        <a href="#slide-3" class="btn primary"><h1>I am ready!</h1></a>
+      <div class="slide" id="slide-2">
+        <div class="content-wrapper">
+          <div class="close"><a href="#slide-1"><span>x</span></a></div>
+          <h4 class="heading-content">Hi, there!</h4>
+          <p class="margin-bottom--16">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+            recusandae porro temporibus distinctio impedit aperiam iure quae
+            cumque placeat. Asperiores quis ipsa expedita aliquid at? Magni
+            voluptate voluptas quisquam voluptatum.
+          </p>
+          <a href="#slide-3" class="btn primary"><h1>I am ready!</h1></a>
+        </div>
       </div>
-    </div>
-    
       <!-- 3. SLAIDS -->
-    <div class="slide" id="slide-2">
-        <input type="text" placeholder="enter your name" id="name" />
+      <div class="slide" id="slide-3">
+        <input
+          type="text"
+          class="input primary size--m"
+          placeholder="enter your name.."
+          id="name"
+        />
         <div class="character-box">
-          
-          <div class="arrowContainer">
-            <img src="./media/pictures/arrow.png" class="arrow-left" alt="" role="button" onclick="prev()">
-          </div>
-          
-          <figure>
-            <img src="./media/pictures/knight.png" class="character">
+          <div id="arrowLeft" class="triangle left"></div>
+          <figure class="characters">
+            <img
+              class="character active js-character"
+              width="250"
+              height="250px"
+              src="./media/pictures/knight.png"
+              alt=""
+            />
+            <img
+              class="character js-character"
+              width="250"
+              height="250px"
+              src="./media/pictures/knight-2.png"
+              alt=""
+            />
+            <img
+              class="character js-character"
+              width="250"
+              height="250px"
+              src="./media/pictures/archer-2.jpg"
+              alt=""
+            />
           </figure>
-          
-          <div class="arrowContainer">
-            <img src="./media/pictures/arrow.png" class="arrow-right" alt="" role="button" onclick="next()">
-          </div>
-        </div> -->
-
+          <div id="arrowRight" class="triangle right"></div>
+        </div>
         <button
           type="button"
           onclick="clickHandler()"
@@ -72,26 +87,12 @@
         </button>
       </div>
 
-      <!-- 3. SLAIDS -->
-      <div class="slide">
-        <div class="box vitalijs">
-          <h6>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
-            recusandae porro temporibus distinctio impedit aperiam iure quae
-            cumque placeat. Asperiores quis ipsa expedita aliquid at? Magni
-            voluptate voluptas quisquam voluptatum.
-          </h6>
-        </div>
-      </div>
-
       <!-- 4. SLAIDS -->
       <!-- 5. SLAIDS -->
       <!-- 6. SLAIDS -->
       <!-- 7. SLAIDS -->
     </div>
-    <script src="./app.js" ></script>
-
-
+    <script src="./index.js"></script>
   </body>
 
 </html>
