@@ -1,28 +1,82 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css">
-    <title>Game</title>
+    <link rel="stylesheet" href="./flexboxgrid.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./helper-class.css" />
+
+    <title>New Tab.</title>
   </head>
   <body>
     <div class="container">
+      <!-- 1. SLAIDS -->
+      <div class="slide" id="slide-1">
+        <ul class="navbar">
+          <li>
+            <a href=""><span>about us</span></a>
+          </li>
+          <li>
+            <a href=""><span>login</span></a>
+          </li>
+          <li>
+            <a href=""><span>scoreboard</span></a>
+          </li>
+        </ul>
+        <div class="start">
+          <a href="#slide-2"><span>start</span></a>
+        </div>
+      </div> -->
 
-      <div class="Romans">
-        <div>
+      <!-- 2. SLAIDS -->
+    <div class="slide" id="slide-2">
+        <input type="text" placeholder="enter your name" id="name" />
+        <div class="character-box">
+          
+          <div class="arrowContainer">
+            <img src="./media/pictures/arrow.png" class="arrow-left" alt="" role="button" onclick="prev()">
+          </div>
+          
+          <figure>
+            <img src="./media/pictures/knight.png" class="character">
+          </figure>
+          
+          <div class="arrowContainer">
+            <img src="./media/pictures/arrow.png" class="arrow-right" alt="" role="button" onclick="next()">
+          </div>
+        </div> -->
 
+        <button
+          type="button"
+          onclick="clickHandler()"
+          class="button button-confirm"
+        >
+          confirm
+        </button>
+      </div>
 
+      <!-- 3. SLAIDS -->
+      <div class="slide">
+        <div class="box vitalijs">
+          <h6>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+            recusandae porro temporibus distinctio impedit aperiam iure quae
+            cumque placeat. Asperiores quis ipsa expedita aliquid at? Magni
+            voluptate voluptas quisquam voluptatum.
+          </h6>
         </div>
       </div>
-
-
-      <div class="Vitalijs">
-      </div>
-      <div class="Matiss">
-
-      </div>
+      <!-- 4. SLAIDS -->
+      <!-- 5. SLAIDS -->
+      <!-- 6. SLAIDS -->
+      <!-- 7. SLAIDS -->
     </div>
+    <script src="./app.js" ></script>
+
+
   </body>
+
 </html>

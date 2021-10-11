@@ -1,0 +1,11 @@
+.flex {
+  display: flex;
+}
+
+.margin-bottom--16 {
+  margin-bottom: 16px;
+}
+
+.margin-bottom--32 {
+  margin-bottom: 32px;
+}
