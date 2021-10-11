@@ -1,0 +1,15 @@
+.flex {
+  display: flex;
+}
+
+.none {
+  display: none;
+}
+
+.margin-bottom--16 {
+  margin-bottom: 1.6em;
+}
+
+.margin-bottom--32 {
+  margin-bottom: 3.2em;
+}

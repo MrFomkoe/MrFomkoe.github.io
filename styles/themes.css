@@ -1,0 +1,59 @@
+/* Themes */
+
+.btn {
+  margin: 2px;
+  padding: 1em 2em;
+  cursor: pointer;
+  justify-content: center;
+  visibility: visible;
+}
+
+.input{
+  height: 3em;
+  color: rgb(150, 150, 150);
+  font-size: 2.2em;
+  color: brown;
+  text-align: center;
+}
+
+.input::placeholder {
+  color: rgb(150, 150, 150);
+  font-size:1em;
+  text-align: center;
+}
+
+.primary {
+  color: hsl(0, 0%, 40%);
+  background-color: hsl(0, 0%, 90%);
+  border: 1px solid hsl(0, 0%, 40%);
+  padding: 0.3em 0.3em;
+  opacity: 0.7;
+  text-transform: capitalize;
+  border-radius: 4px;
+  text-decoration: none;
+  /* padding: 0.3em; */
+}
+
+.primary:hover {
+  opacity: 0.5;
+  transition: all 0.1s ease-out;
+}
+
+.primary:active {
+  color: hsl(0, 0%, 90%);
+  background-color: hsl(0, 0%, 40%);
+  border: 1px solid hsl(0, 0%, 90%);
+  opacity: 0.8;
+  transform: scale(0.96);
+  transition: all 0.1s ease-out;
+}
+
+.size--l {
+  min-width: 30%;
+}
+.size--m {
+  min-width: 20%;
+}
+.size--s {
+  min-width: 10%;
+}

@@ -5,33 +5,47 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./flexboxgrid.css" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./helper-class.css" />
-
+    <link rel="stylesheet" href="./styles/flexboxgrid.css" />
+    <link rel="stylesheet" href="./styles/typography.css" />
+    <link rel="stylesheet" href="./styles/themes.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/helper-class.css" />
     <title>New Tab.</title>
   </head>
   <body>
     <div class="container">
       <!-- 1. SLAIDS -->
       <div class="slide" id="slide-1">
-        <ul class="navbar">
-          <li>
-            <a href=""><span>about us</span></a>
-          </li>
-          <li>
-            <a href=""><span>login</span></a>
-          </li>
-          <li>
-            <a href=""><span>scoreboard</span></a>
-          </li>
-        </ul>
-        <div class="start">
-          <a href="#slide-2"><span>start</span></a>
+        <div class="navbar">
+          <button id="about-us" type="button" class="btn primary size--m">
+            <h2>about us</h2>
+          </button>
+          <button id="login" type="button" class="btn primary size--m">
+            <h2>login</h2>
+          </button>
+          <button id="scoreboard" type="button" class="btn primary size--m">
+            <h2>scoreboard</h2>
+          </button>
         </div>
-      </div> -->
+        <a href="#slide-2" class="btn primary size--s"><h1>start</h1></a>
+      </div>
 
       <!-- 2. SLAIDS -->
+    <div class="slide" id="slide-2">
+      <div class="content-wrapper">
+        <div class="close"><a href="#slide-1"><span>x</span></a></div>
+        <h4 class="heading-content">Hi, there!</h4>
+        <p class="margin-bottom--16">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+          recusandae porro temporibus distinctio impedit aperiam iure quae
+          cumque placeat. Asperiores quis ipsa expedita aliquid at? Magni
+          voluptate voluptas quisquam voluptatum.
+        </p>
+        <a href="#slide-3" class="btn primary"><h1>I am ready!</h1></a>
+      </div>
+    </div>
+    
+      <!-- 3. SLAIDS -->
     <div class="slide" id="slide-2">
         <input type="text" placeholder="enter your name" id="name" />
         <div class="character-box">
@@ -52,9 +66,9 @@
         <button
           type="button"
           onclick="clickHandler()"
-          class="button button-confirm"
+          class="btn primary size--m"
         >
-          confirm
+          <h3>confirm</h3>
         </button>
       </div>
 
@@ -69,6 +83,7 @@
           </h6>
         </div>
       </div>
+
       <!-- 4. SLAIDS -->
       <!-- 5. SLAIDS -->
       <!-- 6. SLAIDS -->
