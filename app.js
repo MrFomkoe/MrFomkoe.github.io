@@ -1,7 +1,11 @@
+const btnAboutUs = document.getElementById("about-us");
+const btnLogin = document.getElementById("login");
+const btnScoreboard = document.getElementById("scoreboard");
+
+
 function clickHandler() {
     let name = document.getElementById("name").value;
-    confirm("Hi, " + name + "! Are you ready for some game?");
-    document.getElementById("name");
+    confirm(`Hi, ${name}! Are you ready for some game?`);
   }
 
 
