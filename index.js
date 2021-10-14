@@ -1,6 +1,7 @@
 console.log("Console is working as aspected...");
 
 const characters = document.querySelectorAll(".js-character");
+console.log(characters)
 const arrowLeft = document.getElementById("arrowLeft");
 const arrowRight = document.getElementById("arrowRight");
 
