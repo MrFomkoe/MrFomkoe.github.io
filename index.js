@@ -10,7 +10,7 @@ const btnScoreboard = document.getElementById("scoreboard");
 
 /* CHARACTERS SLIDER */
 let activeCharacter = 0;
-arrowRight.addEventListener("click", function () {
+  arrowRight.addEventListener("click", function () {
   characters[activeCharacter].classList.remove("active");
   activeCharacter = activeCharacter + 1;
 

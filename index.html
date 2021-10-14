@@ -43,6 +43,7 @@
           <a href="#slide-3" class="btn primary"><h1>I am ready!</h1></a>
         </div>
       </div>
+
       <!-- 3. SLAIDS -->
       <div class="slide" id="slide-3">
         <input
@@ -51,33 +52,43 @@
           placeholder="enter your name.."
           id="name"
         />
-        <div class="character-box">
-          <div id="arrowLeft" class="triangle left"></div>
+
+        <div class="characterBox">
+          
+          <div class="arrowContainer">
+            <img 
+              src="./media/pictures/arrow-left.png" 
+              class="arrowLeft" 
+              alt="" 
+              role="button">
+          </div>
+
           <figure class="characters">
             <img
               class="character active js-character"
-              width="250px"
-              height="250px"
               src="./media/pictures/knight.png"
               alt=""
             />
             <img
               class="character js-character"
-              width="250px"
-              height="250px"
               src="./media/pictures/knight-2.png"
               alt=""
             />
             <img
               class="character js-character"
-              width="250px"
-              height="250px"
               src="./media/pictures/archer-2.png"
               alt=""
             />
           </figure>
-          <div id="arrowRight" class="triangle right"></div>
+          <div class="arrowContainer">
+            <img 
+              src="./media/pictures/arrow-right.png" 
+              class="arrowRight" 
+              alt="" 
+              role="button">
+          </div>
         </div>
+
         <button
           type="button"
           onclick="clickHandler()"
