@@ -50,14 +50,28 @@ body {
   margin-bottom: 10%;
 }
 
-.character-box {
+
+/* Character Choise Box */
+
+.characterBox {
+  /* background-color: yellow; */
+  width: 600px;
   position: relative;
   display: flex;
   align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 5em 0em 5em 0em;
+
 }
 
 .character {
+  /* background-color: white; */
   display: none;
+  height: 250px;
+  width: 250px;
+  position: relative;
+  object-fit:scale-down;
 }
 .active {
   display: block;
@@ -65,7 +79,33 @@ body {
 }
 
 /* Arrows styling */
-.triangle {
+.arrowContainer{
+  /* background-color: blueviolet; */
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrowRight, .arrowLeft {
+  /* background-color: blue; */
+  opacity: 0.95;
+  width: 100px;
+  object-fit:contain;
+}
+
+.arrowRight:hover, .arrowLeft:hover {
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  transform: scale(1.04);
+}
+.arrowRight:active, .arrowLeft:active{
+opacity: 0.8;
+transform: scale(0.96);
+transition: all 0.1s ease-out;
+}
+/* .triangle {
   width: 0;
   height: 0;
   border-top: 2vw solid transparent;
@@ -92,7 +132,7 @@ body {
 
 .right:hover {
   border-left: 4vw solid hsl(0, 0%, 90%);
-}
+} */
 
 .content-wrapper {
   position: relative;
