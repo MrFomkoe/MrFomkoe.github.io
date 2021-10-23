@@ -16,7 +16,7 @@ console.log(characters);
 // starting point
 var activeCharacter = 0;
 
-function next(){
+arrowLeft.addEventListener("click", function () {
     characters[activeCharacter].classList.remove("active");
         ++activeCharacter;
     
@@ -26,9 +26,9 @@ function next(){
 
     characters[activeCharacter].classList.add("active");
     console.log(activeCharacter);
-}
+});
 
-function prev(){
+arrowRight.addEventListener("click", function () {
     characters[activeCharacter].classList.remove("active");
     --activeCharacter;
 
@@ -38,6 +38,6 @@ function prev(){
      
     characters[activeCharacter].classList.add("active");
     console.log(activeCharacter);
-}
+});
 
 
