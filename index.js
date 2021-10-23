@@ -18,9 +18,9 @@ const arrowRight = document.getElementById("arrowRight");
 // starting point
 let activeCharacter = 0;
 
-arrowLeft.addEventListener("click", function () {
-    characters[activeCharacter].classList.remove("active");
-        ++activeCharacter;
+arrowRight.addEventListener("click", function () {
+      characters[activeCharacter].classList.remove("active");
+      ++activeCharacter;
     
         if (activeCharacter >= characters.length) {
             activeCharacter = 0;
@@ -30,7 +30,7 @@ arrowLeft.addEventListener("click", function () {
     console.log(activeCharacter);
 });
 
-arrowRight.addEventListener("click", function () {
+arrowLeft.addEventListener("click", function () {
     characters[activeCharacter].classList.remove("active");
     --activeCharacter;
 

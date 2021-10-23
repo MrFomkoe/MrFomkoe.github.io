@@ -87,20 +87,20 @@ body {
   align-items: center;
   justify-content: center;
 }
-.arrowRight, .arrowLeft {
+#arrowRight, #arrowLeft {
   /* background-color: blue; */
   opacity: 0.95;
   width: 100px;
   object-fit:contain;
 }
 
-.arrowRight:hover, .arrowLeft:hover {
+#arrowRight:hover, #arrowLeft:hover {
   opacity: 1;
   cursor: pointer;
   transition: all 0.2s ease-out;
   transform: scale(1.04);
 }
-.arrowRight:active, .arrowLeft:active{
+#arrowRight:active, #arrowLeft:active{
 opacity: 0.8;
 transform: scale(0.96);
 transition: all 0.1s ease-out;
