@@ -22,10 +22,12 @@ arrowRight.addEventListener("click", function () {
       characters[activeCharacter].classList.remove("active");
       ++activeCharacter;
     
+        // check - if the current character is the last in array - active character changes to first
         if (activeCharacter >= characters.length) {
             activeCharacter = 0;
         }
 
+    // add "active" class to current character
     characters[activeCharacter].classList.add("active");
     console.log(activeCharacter);
 });
