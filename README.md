@@ -3,17 +3,21 @@
 
 
 # Roman
-Timer - check how to code timer with stops, resumes. Need to get data from timer and write it in a file.
+1 Timer - check how to code timer with stops, resumes. Need to get data from timer and write it in a file.
+
+Sound design - soundbar + sounds
 
 Tic tac toe?!
 
 Rock, paper, scissors
 
-Sound design - soundbar + sounds
+
 
 # Matis
 
 "Hangman" game
+
+modals
 
 # Vitalijs
 
