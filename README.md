@@ -9,6 +9,8 @@ Tic tac toe?!
 
 Rock, paper, scissors
 
+Sound design - soundbar + sounds
+
 # Matis
 
 "Hangman" game
