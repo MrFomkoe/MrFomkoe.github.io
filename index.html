@@ -1,128 +1,105 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/flexboxgrid.css" />
-    <link rel="stylesheet" href="./styles/typography.css" />
-    <link rel="stylesheet" href="./styles/themes.css" />
-    <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="stylesheet" href="./styles/helper-class.css" />
-    <link rel="stylesheet" href="./styles/modul.css">
-    <title>New Tab.</title>
-  </head>
-  <body>
-    <div class="container">
-      <!-- 1. SLAIDS -->
-      <div class="slide" id="slide-1">
-        <div class="navbar">
-          <button id="about-us" type="button" class="btn primary size--m">
-            <h2>about us</h2>
-          </button>
-          <button id="login" type="button" class="btn primary size--m">
-            <h2>login</h2>
-          </button>
-          <button id="scoreboard" type="button" class="btn primary size--m">
-            <h2>scoreboard</h2>
-          </button>
-        </div>
-        <a href="#slide-2" class="btn primary size--s"><h1>start</h1></a>
-        <div>
-          <div id="myModal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <p>Tris vilmari.<br>
-                Vitalijs , Matiss, Romans
-              </p>
-            </div>
-      
-          </div>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/flexboxgrid.css" />
+  <link rel="stylesheet" href="./styles/typography.css" />
+  <link rel="stylesheet" href="./styles/themes.css" />
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/helper-class.css" />
+  <link rel="stylesheet" href="./styles/modul.css">
+  <title>New Tab.</title>
+</head>
 
-      <!-- 2. SLAIDS -->
-      <div class="slide" id="slide-2">
-        <div class="content-wrapper">
-          <div class="close"><a href="#slide-1"><span>x</span></a></div>
-          <h4 class="heading-content">Hi, there!</h4>
-          <p class="margin-bottom--16">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
-            recusandae porro temporibus distinctio impedit aperiam iure quae
-            cumque placeat. Asperiores quis ipsa expedita aliquid at? Magni
-            voluptate voluptas quisquam voluptatum.
-          </p>
-          <a href="#slide-3" class="btn primary"><h1>I am ready!</h1></a>
-        </div>
-      </div>
-
-      <!-- 3. SLAIDS -->
-      <div class="slide" id="slide-3">
-        <input
-          type="text"
-          class="input primary size--m"
-          placeholder="enter your name.."
-          id="name"
-        />
-
-        <div class="characterBox">
-          
-          <div class="arrowContainer">
-            <img 
-              src="./media/pictures/arrow-left.png" 
-              class="arrowLeft" 
-              alt="" 
-              role="button"
-              onclick="prev()">
-          </div>
-
-          <figure class="characters">
-            <img
-              class="character active js-character"
-              src="./media/pictures/knight.png"
-              alt=""
-            />
-            <img
-              class="character js-character"
-              src="./media/pictures/mage-2.png"
-              alt=""
-            />
-            <img
-              class="character js-character"
-              src="./media/pictures/archer-2.png"
-              alt=""
-            />
-          </figure>
-          <div class="arrowContainer">
-            <img 
-              src="./media/pictures/arrow-right.png" 
-              class="arrowRight" 
-              alt="" 
-              role="button"
-              onclick="next()">
-          </div>
-        </div>
-
-        <button
-          type="button"
-          onclick="clickHandler()"
-          class="btn primary size--m"
-        >
-          <h3>confirm</h3>
+<body>
+  <div class="container">
+    <!-- 1. SLAIDS -->
+    <div class="slide" id="slide-1">
+      <div class="navbar">
+        <button id="myBtn" type="button" class="btn primary size--m">
+          <h2>about us</h2>
+        </button>
+        <button id="login" type="button" class="btn primary size--m">
+          <h2>login</h2>
+        </button>
+        <button id="scoreboard" type="button" class="btn primary size--m">
+          <h2>scoreboard</h2>
         </button>
       </div>
+      <a href="#slide-2" class="btn primary size--s">
+        <h1>start</h1>
+      </a>
 
-      <!-- 4. SLAIDS -->
-      <!-- 5. SLAIDS -->
-      <!-- 6. SLAIDS -->
-      <!-- 7. SLAIDS -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+     <div class="modal-content">
+       <span class="close">&times;</span>
+       <p>Tris vilmari.<br>
+         Vitalijs , Matiss, Romans
+       </p>
+     </div>
+   </div>
+
+
     </div>
-    <!-- <script src="./index.js"></script> -->
-    <script src="./index.js"></script>
-    <script src="./modul.js"></script>
-  </body>
+
+
+
+
+    <!-- 2. SLAIDS -->
+    <div class="slide" id="slide-2">
+      <div class="content-wrapper">
+        <div class="close"><a href="#slide-1"><span>x</span></a></div>
+        <h4 class="heading-content">Hi, there!</h4>
+        <p class="margin-bottom--16">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+          recusandae porro temporibus distinctio impedit aperiam iure quae
+          cumque placeat. Asperiores quis ipsa expedita aliquid at? Magni
+          voluptate voluptas quisquam voluptatum.
+        </p>
+        <a href="#slide-3" class="btn primary">
+          <h1>I am ready!</h1>
+        </a>
+      </div>
+    </div>
+
+    <!-- 3. SLAIDS -->
+    <div class="slide" id="slide-3">
+      <input type="text" class="input primary size--m" placeholder="enter your name.." id="name" />
+
+      <div class="characterBox">
+
+        <div class="arrowContainer">
+          <img src="./media/pictures/arrow-left.png" class="arrowLeft" alt="" role="button" onclick="prev()">
+        </div>
+
+        <figure class="characters">
+          <img class="character active js-character" src="./media/pictures/knight.png" alt="" />
+          <img class="character js-character" src="./media/pictures/mage-2.png" alt="" />
+          <img class="character js-character" src="./media/pictures/archer-2.png" alt="" />
+        </figure>
+        <div class="arrowContainer">
+          <img src="./media/pictures/arrow-right.png" class="arrowRight" alt="" role="button" onclick="next()">
+        </div>
+      </div>
+
+      <button type="button" onclick="clickHandler()" class="btn primary size--m">
+        <h3>confirm</h3>
+      </button>
+    </div>
+
+    <!-- 4. SLAIDS -->
+    <!-- 5. SLAIDS -->
+    <!-- 6. SLAIDS -->
+    <!-- 7. SLAIDS -->
+  </div>
+  <!-- <script src="./index.js"></script> -->
+  <script src="./index.js"></script>
+  <script src="./modul.js"></script>
+</body>
 
 </html>

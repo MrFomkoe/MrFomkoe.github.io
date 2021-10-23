@@ -1,6 +1,6 @@
-const btnAboutUs = document.getElementById("about-us");
-const btnLogin = document.getElementById("login");
-const btnScoreboard = document.getElementById("scoreboard");
+// const btnAboutUs = document.getElementById("about-us");
+// const btnLogin = document.getElementById("login");
+// const btnScoreboard = document.getElementById("scoreboard");
 
 
 function clickHandler() {
