@@ -1,6 +1,9 @@
 const btnAboutUs = document.getElementById("about-us");
 const btnLogin = document.getElementById("login");
 const btnScoreboard = document.getElementById("scoreboard");
+const arrowLeft = document.getElementById("arrowLeft");
+const arrowRight = document.getElementById("arrowRight");
+const characters = document.querySelectorAll(".js-character");
 
 
 function clickHandler() {
@@ -10,7 +13,6 @@ function clickHandler() {
 
 
 // Array (massive) with pictures of characters
-const characters = document.querySelectorAll(".js-character");
 console.log(characters);
 
 // starting point
