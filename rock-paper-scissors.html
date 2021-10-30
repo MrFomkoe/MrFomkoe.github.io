@@ -26,31 +26,42 @@
             </div>
         </div>
 
-        <div class="resultBox">
-            <div class="result">User score is:
-                <span class="userScore">0</span>
-            </div>
-
-            <div class="result"> Computer score is:
-                <span class="computerScore">0</span>
-            </div>
-        </div>
-
         <div class="rpsImagesAll">
 
-            <div class="currentChoice">
-                <div id="userChoiceBox">
-                    <img 
-                    id= "userChoiceImg" 
-                    src="./media/pictures/rock.png" 
-                    alt="">
+            <div class="choiceBox">
+                <div class="resultBox">
+                    <div class="result">
+                        <span class="resultText "> YOUR SCORE IS: </span> 
+                        <span class="userScore resultText">0</span>
+                    </div>
+        
+                    <div class="result"> 
+                        <span class="resultText"> OPPONENT SCORE IS: </span>
+                        <span class="computerScore resultText">0</span>
+                    </div>
                 </div>
-                <div id="computerChoiceBox">
-                    <img 
-                    id="computerChoiceImg"
-                    src="./media/pictures/rock.png" 
-                    alt="">
+
+                <div class="currentChoice">
+                
+                    <div id="userChoiceBox">
+                        <img 
+                        id= "userChoiceImg" 
+                        src="./media/pictures/rock.png" 
+                        alt="">
+                    </div>
+                    <div id="computerChoiceBox">
+                        <img 
+                        id="computerChoiceImg"
+                        src="./media/pictures/rock.png" 
+                        alt="">
+                    </div>
                 </div>
+
+                <div class="whoWon">
+
+
+                </div>
+
             </div>
 
             <div class="imagesForChoice">
@@ -70,6 +81,7 @@
                     src="./media/pictures/scissors.png"
                     alt="">
             </div>
+            
         </div>
     </div>
 
@@ -115,16 +127,29 @@
                 }
                 animate();
                 //runs user choice and image show func with delay of 1sec
-                setTimeout(showUserChoice, 1000, element);
+                setTimeout(showUserChoice, 1800, element);
                 //runs computer choice and image show func with delay of 1sec                
-                setTimeout(generateComputerChoice, 1000);
+                setTimeout(generateComputerChoice, 1800);
                 //runs compare function with delay of 1.1 sec
-                setTimeout(compare, 1100);
+                setTimeout(compare, 1900);
             })
         })
 
         function animate() {
+            // const animatedImages = [userImage, computerImage];
+            userImage.animate([
+                {transform: 'translateY(-50px) rotate(90deg)'},
+            ],  {
+                duration: 300,
+                iterations: 6,
+                direction: 'alternate'})
 
+            computerImage.animate([
+                {transform: 'translateY(-50px) scaleX(-1) rotate(90deg)'},
+            ],  {
+                duration: 300,
+                iterations: 6,
+                direction: 'alternate'})
         }
 
         function showUserChoice (element){
