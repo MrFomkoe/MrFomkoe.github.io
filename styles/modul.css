@@ -19,19 +19,70 @@
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  position: relative;
 }
 
 /* The Close Button */
-.close {
+.close, .close-login, .close-scoreboard {
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+
 }
 
 .close:hover,
 .close:focus {
+  color:red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* LOGIN CONTENT */
+
+.login-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background-color: #bb2727;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+
+.close-login:hover,
+.close-login:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+
+/* SCOREBOARD CONTENT */
+
+
+.scoreboard-content{
+
+  background-color: #bb2727;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+ 
+
+
+.close-scoreboard:hover,
+.close-scoreboard:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  font-size: 30px;
+  list-style: none;
 }
