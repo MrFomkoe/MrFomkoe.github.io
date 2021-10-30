@@ -11,23 +11,27 @@
 </head>
 <body>
     <div class="rockPaperScissorsContainer">
-        <div id="myModal" class="modal">
+        <div id="modalWon" class="modal">
             <!-- Modal content -->
-            <div class="modal-content win">
-                
-            </div>
-
-            <div class="modal-content lost">
-                
+            <div class="modal-content">
+                <p>Congrats, you WON!</p>
+                <button id="moveForth" onclick="">CONTINUE TO NEXT GAME</button>
             </div>
         </div>
 
-        <div id="result">
-            <div>User Score Is:
+        <div id="modalLost" class="modal">
+            <div class="modal-content">
+                <p>Sorry, you lost... Try again</p>
+                <button id="restartGame" onclick="restart()">RESTART GAME</button>
+            </div>
+        </div>
+
+        <div class="resultBox">
+            <div class="result">User score is:
                 <span class="userScore">0</span>
             </div>
 
-            <div> Computer score is:
+            <div class="result"> Computer score is:
                 <span class="computerScore">0</span>
             </div>
         </div>
@@ -70,16 +74,20 @@
     </div>
 
     <script>
+        // get the modal
+        const modalWon = document.getElementById('modalWon');
+        const modalLost = document.getElementById('modalLost');
+
         // defines user score show
         let userScoreSpan = document.querySelector('.userScore');
-        // console.log(userScoreSpan);
 
+        // defines user score
         let userScore = 0;
 
         // defines computer score show
         let computerScoreSpan = document.querySelector('.computerScore');
-        // console.log(computerScoreSpan);
 
+        // defies computer score
         let computerScore = 0;
 
         // makes array from all .rpsImage clall - takes all pictures
@@ -104,7 +112,8 @@
                 if (userImage.src != './media/pictures/rock.png' || computerImage.src != './media/pictures/rock.png'){
                     userImage.src = './media/pictures/rock.png';
                     computerImage.src = './media/pictures/rock.png';
-                }                
+                }
+                animate();
                 //runs user choice and image show func with delay of 1sec
                 setTimeout(showUserChoice, 1000, element);
                 //runs computer choice and image show func with delay of 1sec                
@@ -113,6 +122,10 @@
                 setTimeout(compare, 1100);
             })
         })
+
+        function animate() {
+
+        }
 
         function showUserChoice (element){
             // sets userchoice to pressed image's ID
@@ -159,25 +172,22 @@
             console.log('computer score is: ', computerScore);
             computerScoreSpan.innerHTML = computerScore;
 
-            if (userScore == 5){
-                alert('user wins game');
-            }
-            if (computerScore == 5){
-                alert('computer wins');
-            }
+            // if (userScore == 10){
+            //     modalWon.style.display = 'block';
+            // }
+            // if (computerScore == 2){
+            //     modalLost.style.display = 'block';
+            // }
+        }
+
+        function restart () {
+            userScore = 0;
+            userScoreSpan.innerHTML = userScore;
+            computerScore = 0;
+            computerScoreSpan.innerHTML = computerScore;
+            modalLost.style.display = 'none';
         }
         
-
-
-
-
-
-
-
-
-
-
-
 
     </script>
 </body>
