@@ -4,30 +4,162 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/rps-style.css">
     <title>Document</title>
-    <style>
-        #rock {
-            background-image: url("media/pictures/rock.png");
-        }
-    </style>
+
 </head>
 <body>
-    <div class="rpsImages">
-        <div id="rock"></div>
-        <div id="paper"></div>
-        <div id="scissors"></div>
-    </div>
+    <div class="rockPaperScissorsContainer">
+        <div id="result">
+            <div>User Score Is:
+                <span class="userScore">0</span>
+            </div>
 
-    <div>You
-        <span class="resultScore"></span>
-    </div>
-    <div>
-        <span class="resultScore"></span>
-        Opponent
+            <div> Computer score is:
+                <span class="computerScore">0</span>
+            </div>
+        </div>
+
+        <div class="rpsImagesAll">
+
+            <div class="currentChoice">
+                <div id="userChoice">
+                    <img 
+                    id= "rockDefaultUser" 
+                    src="./media/pictures/rock.png" 
+                    alt="">
+                </div>
+                <div id="computerChoice">
+                    <img 
+                    id="rockDefaultComputer"
+                    src="./media/pictures/rock.png" 
+                    alt="">
+                </div>
+            </div>
+
+            <div class="imagesForChoice">
+                <img 
+                    id='rock' 
+                    class='rpsImage' 
+                    src="./media/pictures/rock.png" 
+                    alt="">
+                <img 
+                    id='paper' 
+                    class='rpsImage' 
+                    src="./media/pictures/paper.png"
+                    alt="">
+                <img 
+                    id='scissors' 
+                    class='rpsImage' 
+                    src="./media/pictures/scissors.png"
+                    alt="">
+            </div>
+        </div>
     </div>
 
     <script>
-        const elements = ['rock', 'paper', 'scissors'];
+        // defines user score show
+        let userScoreSpan = document.querySelector('.userScore');
+        // console.log(userScoreSpan);
+
+        let userScore = 0;
+
+        // defines computer score show
+        let computerScoreSpan = document.querySelector('.computerScore');
+        // console.log(computerScoreSpan);
+
+        let computerScore = 0;
+
+        // makes array from all .rpsImage clall - takes all pictures
+        const choices = document.querySelectorAll('.rpsImage');
+        // console.log('all images are: ', choices);
+
+        // defines user choice that will work further
+        let userChoice;
+        // defines computer choice that will work further
+        let computerChoice;
+
+        // takes el1 .. elN from choices array
+        choices.forEach(function (possibleChoice){
+            // makes evenlistener to 
+            possibleChoice.addEventListener('click', function (element) {
+                //runs user image show func with delay of 2sec
+                setTimeout(showUserChoice, 0, element);
+                //runs computer image show func with delay of 2sec                
+                setTimeout(generateComputerChoice, 0);
+                //runs compare function with delay of 2.1 sec
+                setTimeout(compare, 0);
+            })
+        })
+
+        function showUserChoice (element){
+            // sets userchoice to pressed image's ID
+            userChoice = element.target.id;
+            // const userImage = document.getElementById('rockDefaultUser');
+            // // if (userImage.src != )
+            // userImage.src = element.target.src;
+            // console.log('user image is: ', userImage);
+            console.log('user choice is: ' + userChoice);
+        }
+
+        function generateComputerChoice(){
+            // generates random number 0-2
+            const randomNumber = Math.floor(Math.random() * choices.length);
+            // adds id from array to computer choice
+            computerChoice = choices[randomNumber].id;
+            console.log('computer choice is: ' + computerChoice);
+                // const computerImage = document.getElementById('rockDefaultComputer');
+                // console.log(computerImage);
+                // computerImage.src = choices[randomNumber].src;
+                // console.log(computerImage);
+        }
+
+        function compare(){
+            // checks if user choice is equal to computer choice
+            if (userChoice == computerChoice){
+                console.log('the result is: draw')
+            } else {
+                // if choices are not equal, those are being compared and the winner is being determined
+                // score is incremented
+                switch (userChoice + computerChoice){
+                    case 'rockscissors':
+                    case 'paperrock':
+                    case 'scissorspaper':
+                        console.log('you win');
+                        userScore++;
+                        break;
+                    case 'rockpaper':
+                    case 'paperscissors':
+                    case 'scissorsrock':
+                        console.log('you lost');
+                        computerScore++;
+                        break;
+                }
+            }
+            console.log('user score is: ', userScore);
+            userScoreSpan.innerHTML = userScore;
+            console.log('computer score is: ', computerScore);
+            computerScoreSpan.innerHTML = computerScore;
+
+            if (userScore == 5){
+                alert('user wins game');
+            }
+            if (computerScore == 5){
+                alert('computer wins');
+            }
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
 
     </script>
 </body>
