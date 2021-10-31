@@ -1,12 +1,23 @@
 const btnAboutUs = document.getElementById("about-us");
 const btnLogin = document.getElementById("login");
 const btnScoreboard = document.getElementById("scoreboard");
+const headingContent = document.querySelectorAll('.heading-content');
+const playerNameSpan = document.querySelectorAll('.playerNameSpan');
 
-function clickHandler() {
-    let name = document.getElementById("name").value;
-    confirm(`Hi, ${name}! Are you ready for some game?`);
-  }
-
+// function that adds name of the player to all headings where there is address to the player
+function addName (){
+    let playerName = document.getElementById("name").value;
+    console.log(playerName)
+    if (playerName == ''){
+        playerName = 'Player';
+    }
+    headingContent.forEach(function (heading){
+        heading.innerHTML = playerName;
+    });
+    playerNameSpan.forEach(function (heading){
+        heading.innerHTML = playerName + ', ';
+    });
+}
 
 // Array (massive) with pictures of characters
 const characters = document.querySelectorAll(".js-character");
@@ -29,7 +40,7 @@ arrowRight.addEventListener("click", function () {
 
     // add "active" class to current character
     characters[activeCharacter].classList.add("active");
-    console.log(activeCharacter);
+    // console.log('active character is: ', activeCharacter);
 });
 
 arrowLeft.addEventListener("click", function () {
@@ -41,7 +52,34 @@ arrowLeft.addEventListener("click", function () {
         }
      
     characters[activeCharacter].classList.add("active");
-    console.log(activeCharacter);
+    // console.log('active character is: ', activeCharacter);
 });
 
+// function that adds the character 
+function addCharacter(){
+    let wrapperContent = document.querySelector('.slide-wrapper-content');
+    let characterToShow = document.createElement('IMG');
+    characterToShow.src = characters[activeCharacter].src;
+    characterToShow.className = 'character active';
+
+    characterToShow.style.cssText = `
+        position: relative;
+        width: 250px;
+        height: 250px;
+        opacity: 0;
+        `;
+    document.querySelector('.activeCharacter').appendChild(characterToShow);
+    increaseOpacityCharacter(characterToShow);
+    increaseOpacityCharacter(wrapperContent);
+}
+
+// function that changes opacity for the added character
+function increaseOpacityCharacter(characterToShow){
+    characterToShow.animate([
+        {opacity: 1,},
+    ],  {
+        duration: 2000,
+        iterations: 1,
+        fill: 'forwards'})
+}
 

@@ -1,12 +1,14 @@
 @import url('http://fonts.cdnfonts.com/css/silkscreen');
 
 .rockPaperScissorsContainer{
-    display: flex;
+    display: none;
+    z-index: 1;
+    position: absolute;
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 1000px;
-    height: 800px;
+    border: rgb(162, 168, 182) 10px groove;
+    opacity: 0;
     /* background-color: tomato; */
 
 }
@@ -15,7 +17,7 @@
 .choiceBox {
     width: 900px;
     height: 450px;
-    background-color:cornflowerblue;
+    /* background-color:cornflowerblue; */
     background-image: url(./media/pictures/tavern.jpg);
     background-repeat:no-repeat;
     background-size:contain;
@@ -47,6 +49,7 @@
         position: relative;
         font-family: 'Silkscreen', sans-serif;
         font-size: 1.5em;
+        text-align: initial;
         color: rgb(255, 255, 255);
     }
 
