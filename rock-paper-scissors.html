@@ -15,7 +15,7 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <p>Congrats, you WON!</p>
-                <button id="moveForth" onclick="">CONTINUE TO NEXT GAME</button>
+                <button id="moveForth" onclick="restart()">CONTINUE TO NEXT GAME</button>
             </div>
         </div>
 
@@ -31,13 +31,13 @@
             <div class="choiceBox">
                 <div class="resultBox">
                     <div class="result">
-                        <span class="resultText "> YOUR SCORE IS: </span> 
-                        <span class="userScore resultText">0</span>
+                        <span class="resultText resultSpan"> YOUR SCORE IS: </span> 
+                        <span class="userScore resultText resultNumberSpan">0</span>
                     </div>
         
                     <div class="result"> 
-                        <span class="resultText"> OPPONENT SCORE IS: </span>
-                        <span class="computerScore resultText">0</span>
+                        <span class="resultText resultSpan"> OPPONENT SCORE IS: </span>
+                        <span class="computerScore resultText resultNumberSpan">0</span>
                     </div>
                 </div>
 
@@ -57,10 +57,7 @@
                     </div>
                 </div>
 
-                <div class="whoWon">
-
-
-                </div>
+                <div id="whoWon"></div>
 
             </div>
 
@@ -102,6 +99,10 @@
         // defies computer score
         let computerScore = 0;
 
+        //defines image win/lost/draw to show
+        const whoWon = document.getElementById('whoWon');
+        // console.log({whoWon})
+
         // makes array from all .rpsImage clall - takes all pictures
         const choices = document.querySelectorAll('.rpsImage');
         // console.log('all images are: ', choices);
@@ -117,14 +118,19 @@
         // defines computer image to show
         const computerImage = document.getElementById('computerChoiceImg');
 
+
         // takes el1 .. elN from choices array
         choices.forEach(function (possibleChoice){
             // makes evenlistener to 
-            possibleChoice.addEventListener('click', function (element) {
+            possibleChoice.addEventListener('click', function run (element) {
                 if (userImage.src != './media/pictures/rock.png' || computerImage.src != './media/pictures/rock.png'){
                     userImage.src = './media/pictures/rock.png';
                     computerImage.src = './media/pictures/rock.png';
                 }
+                if (whoWon.style.backgroundImage != null){
+                    opacityFade();
+                }
+
                 animate();
                 //runs user choice and image show func with delay of 1sec
                 setTimeout(showUserChoice, 1800, element);
@@ -135,8 +141,8 @@
             })
         })
 
+        // function to animate the movement of default rock
         function animate() {
-            // const animatedImages = [userImage, computerImage];
             userImage.animate([
                 {transform: 'translateY(-50px) rotate(90deg)'},
             ],  {
@@ -173,7 +179,10 @@
         function compare(){
             // checks if user choice is equal to computer choice
             if (userChoice == computerChoice){
-                console.log('the result is: draw')
+                console.log('the result is: draw');
+                // adds result to screen
+                whoWon.style.backgroundImage = "url('./media/pictures/draw.png')";
+                opacityChange();
             } else {
                 // if choices are not equal, those are being compared and the winner is being determined
                 // score is incremented
@@ -183,12 +192,18 @@
                     case 'scissorspaper':
                         console.log('you win');
                         userScore++;
+                        // adds result to screen
+                        whoWon.style.backgroundImage = "url('./media/pictures/you-win.png')";
+                        opacityChange();
                         break;
                     case 'rockpaper':
                     case 'paperscissors':
                     case 'scissorsrock':
                         console.log('you lost');
                         computerScore++;
+                        // adds result to screen
+                        whoWon.style.backgroundImage = "url('./media/pictures/you-lost.png')";
+                        opacityChange();
                         break;
                 }
             }
@@ -197,12 +212,30 @@
             console.log('computer score is: ', computerScore);
             computerScoreSpan.innerHTML = computerScore;
 
-            // if (userScore == 10){
-            //     modalWon.style.display = 'block';
-            // }
-            // if (computerScore == 2){
-            //     modalLost.style.display = 'block';
-            // }
+            if (userScore == 3){
+                modalWon.style.display = 'block';
+            }
+            if (computerScore == 3){
+                modalLost.style.display = 'block';
+            }
+        }
+
+        function opacityChange(){
+            whoWon.animate([
+                {opacity: 1,},
+            ],  {
+                duration: 250,
+                iterations: 1,
+                fill: 'forwards'})
+        }
+
+        function opacityFade(){
+            whoWon.animate([
+                {opacity: 0,},
+            ],  {
+                duration: 150,
+                iterations: 1,
+                fill: 'forwards'})
         }
 
         function restart () {
@@ -211,6 +244,7 @@
             computerScore = 0;
             computerScoreSpan.innerHTML = computerScore;
             modalLost.style.display = 'none';
+            modalWon.style.display = 'none';
         }
         
 
