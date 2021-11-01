@@ -57,3 +57,7 @@
 .size--s {
   min-width: 10%;
 }
+
+.startBTN {
+  opacity: 0;
+}
