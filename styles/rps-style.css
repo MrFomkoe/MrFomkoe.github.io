@@ -2,14 +2,14 @@
 
 /* by default game is hidden and has 0 opacity. After the start of game, it becomes block and visible */
 .rockPaperScissorsContainer{
-    display: block;
+    display: none;
     z-index: 1;
     position: absolute;
     justify-content: center;
     align-items: center;
     margin: auto;
     border: rgb(162, 168, 182) 10px groove;
-    opacity: 1;
+    opacity: 0;
     /* background-color: tomato; */
 
 }
