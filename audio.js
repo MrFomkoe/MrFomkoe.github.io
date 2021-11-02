@@ -1,5 +1,5 @@
 const audio = document.getElementById('audio');
-audio.volume = 0.5;
+audio.volume = 0;
 
 function audioPlay(){
     audio.play();

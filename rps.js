@@ -37,9 +37,14 @@
         // defines computer image to show
         const computerImage = document.getElementById('computerChoiceImg');
 
+        // defines whole container with game
         const rpsContainer = document.querySelector('.rockPaperScissorsContainer');
+
+        // defines wrapper that fades when game starts
         const wrapperContent = document.querySelector('.slide-wrapper-content');
 
+        // defines the div that doesn't allow to click when the turn runs
+        const cantClickDiv = document.querySelector('.cantClick');
 
         function runRPS(){
             rpsContainer.style.display = "block";
@@ -69,6 +74,8 @@
                 if (whoWon.style.backgroundImage != null){
                     opacityFade();
                 }
+
+                cantClick();
 
                 animate();
                 //runs user choice and image show func with delay of 1sec
@@ -154,7 +161,7 @@
             if (userScore == 10){
                 modalWon.style.display = 'block';
             }
-            if (computerScore == 1){
+            if (computerScore == 10){
                 youLost++;
                 if (youLost == 2){
                 modalLostButContinue.style.display = 'block';
@@ -170,6 +177,8 @@
                 duration: 250,
                 iterations: 1,
                 fill: 'forwards'})
+
+            
         }
 
         function opacityFade(){
@@ -189,4 +198,11 @@
             modalLost.style.display = 'none';
             modalWon.style.display = 'none';
             modalLostButContinue.style.display = 'none';
+        }
+
+        function cantClick (){
+            cantClickDiv.style.display = 'block';
+            setTimeout(function(){
+                cantClickDiv.style.display = 'none'
+            }, 2150);
         }

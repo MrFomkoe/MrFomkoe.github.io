@@ -1,14 +1,15 @@
 @import url('http://fonts.cdnfonts.com/css/silkscreen');
 
+/* by default game is hidden and has 0 opacity. After the start of game, it becomes block and visible */
 .rockPaperScissorsContainer{
-    display: none;
+    display: block;
     z-index: 1;
     position: absolute;
     justify-content: center;
     align-items: center;
     margin: auto;
     border: rgb(162, 168, 182) 10px groove;
-    opacity: 0;
+    opacity: 1;
     /* background-color: tomato; */
 
 }
@@ -22,6 +23,7 @@
     background-repeat:no-repeat;
     background-size:contain;
 }
+
     /* Result box */
     .resultBox {
         width: 100%;
@@ -113,6 +115,16 @@
     height: 250px;
     background-image: url(../media/pictures/table.jpg);
     /* background-color:coral */
+}
+
+.cantClick{
+    position: absolute;
+    width: 900px;
+    height: 250px;
+    display: none;
+    opacity: 1;
+    z-index: 1;
+    /* background-color: yellow; */
 }
 
 .rpsImage {
