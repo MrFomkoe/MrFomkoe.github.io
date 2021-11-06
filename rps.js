@@ -159,14 +159,14 @@
             computerScoreSpan.innerHTML = computerScore;
 
             if (userScore == 10){
-                modalWon.style.display = 'block';
+                modalWon.style.display = 'flex';
             }
-            if (computerScore == 10){
+            if (computerScore == 1){
                 youLost++;
                 if (youLost == 2){
-                modalLostButContinue.style.display = 'block';
+                modalLostButContinue.style.display = 'flex';
                 }
-                modalLost.style.display = 'block';
+                modalLost.style.display = 'flex';
             }
         }
 

@@ -58,7 +58,7 @@
 
       <div id="myLogin" class="modal">
         <!-- Modal content -->
-        <div class="login-content">
+        <div class="modal-content">
           <span class="close-login">&times;</span>
             <input type="text" placeholder="Yor Login">
             <input type="text" placeholder="Password">
@@ -69,7 +69,7 @@
 
       <div id="myScoreboard" class="modal">
         <!-- Modal content -->
-        <div class="scoreboard-content">
+        <div class="modal-content">
           <span class="close-scoreboard">&times;</span>
           <ul class="users">
             <li>1.vieta</li>
@@ -88,7 +88,6 @@
       <!-- 2. SLAIDS -->
       <div class="slide" id="slide-2">
         <div class="content-wrapper">
-          <div class="close"><a href="#slide-1"><span>x</span></a></div>
           <h4 class="heading-content">Hi, there!</h4>
           <p class="margin-bottom--16">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
@@ -170,23 +169,23 @@
           <div id="modalWon" class="modal">
               <!-- Modal content -->
               <div class="modal-content">
-                  <p>Congrats, you WON!</p>
-                  <button id="moveForth" onclick="restart()">CONTINUE TO NEXT GAME</button>
+                  <p>Congrats, you WON!</p><br>
+                  <p><button id="moveForth" onclick="restart()">CONTINUE TO NEXT GAME</button></p>
               </div>
           </div>
   
           <div id="modalLost" class="modal">
               <div class="modal-content">
-                  <p>Sorry, you lost... Try again</p>
-                  <button id="restartGame" onclick="restart()">RESTART GAME</button>
+                  <p>Sorry, you lost... Try again</p><br>
+                  <p><button id="restartGame" onclick="restart()">RESTART GAME</button></p>
               </div>
           </div>
 
           <div id="modalLostButContinue" class="modal">
             <div class="modal-content">
                 <p><span class="playerNameSpan">, </span>you are hopeless. Ha-ha-ha! But, you at least amused the old man. So be it, hold the key and go your own way."<br>
-                  The old man gave you a key to another room in the dungeon, and now you can continue your adventure.</p>
-                <button id="restartGame" onclick="restart()">RESTART GAME</button>
+                  The old man gave you a key to another room in the dungeon, and now you can continue your adventure.</p><br>
+                <p><button id="restartGame" onclick="restart()">RESTART GAME</button></p>
             </div>
           </div>
   

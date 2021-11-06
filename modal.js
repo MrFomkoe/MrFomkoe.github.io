@@ -16,15 +16,15 @@
 
  // When the user clicks the button, open the modal 
  btn.onclick = function() {
-   modal.style.display = "block";
+   modal.style.display = "flex";
  }
  
  btnn.onclick = function () {
-  modall.style.display = "block"
+  modall.style.display = "flex"
  }
 
  btnnn.onclick = function () {
-  modalll.style.display = "block" 
+  modalll.style.display = "flex" 
   }
 
 
