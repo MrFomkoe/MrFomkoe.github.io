@@ -1,0 +1,54 @@
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  /* overflow: auto; Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.596); /* Black w/ opacity */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  background: rgb(199, 199, 199);
+  opacity: 0.85;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  border: 10px rgba(136, 136, 136, 0.609) solid;
+  /* border-image-source: url('../media/pictures/border.png'); */
+  /* background-image: url('../media/pictures/border.png'); */
+}
+
+
+/* The Close Button */
+.close, .close-login, .close-scoreboard {
+  position: absolute;
+  top: 10%;
+  right: 3%;
+  cursor: pointer;
+  color: #000000;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.close-login:hover, 
+.close-login:focus,
+.close-scoreboard:hover,
+.close-scoreboard:focus {
+  color:red;
+  text-decoration: none;
+  cursor: pointer;
+}
