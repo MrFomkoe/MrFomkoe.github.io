@@ -13,7 +13,7 @@ html {
 
 body {
   background-color: hsl(219, 79%, 66%);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .container {
@@ -150,7 +150,7 @@ transition: all 0.1s ease-out;
   position: relative;
   display: flex;
   flex-direction: column;
-  background: rgb(255, 255, 255);
+  background: rgb(199, 199, 199);
   opacity: 0.6;
   width: 40rem;
   padding: 1em;
@@ -164,14 +164,6 @@ transition: all 0.1s ease-out;
   text-align: justify;
 }
 
-.close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-  line-height: 0.8em;
-  padding: 0.4em;
-}
 
 .activeCharacter{
   display: flex;
