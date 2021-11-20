@@ -56,19 +56,22 @@ const gameCards = [
 // function to start game
 function startGame(){
 
-    // dublicates array so the cards would have pairs
-    gameCards.push(...gameCards);
+    // dublicates the deck so the cards would have pairs
+    const fullDeck = [...gameCards];
+    fullDeck.push(...gameCards);
+
     console.log('cards are: ', gameCards);
+    console.log('full deck is: ', fullDeck);
 
     // sets the computer health, which is unique card amount
-    computerHealth = gameCards.length/2;
+    computerHealth = gameCards.length;
 
     // starts function to shuffle dublicated array
-    shuffleArray(gameCards);
+    shuffleArray(fullDeck);
     // starts function to create the table with cards
-    createGameField(gameCards);
+    createGameField(fullDeck);
 
-    // starts function to pick the first card
+    // starts function to hide cards and then pick the first card
     setTimeout(hideCards, 3000);
 }
 
@@ -84,7 +87,7 @@ function shuffleArray(deck){
 }
 
 // function to create the game field. By default it is 3 rows x 4 columns (possibly will make difficulties later)
-function createGameField (gameCards){
+function createGameField (fullDeck){
     // general array with game field
     const gameField = new Array();
 
@@ -102,7 +105,7 @@ function createGameField (gameCards){
         for (let i=0; i<arrayRows; i++){
             // filling columns
             for (let j=0; j<arrayColumns; j++){
-                    gameField[i][j] = gameCards[a];
+                    gameField[i][j] = fullDeck[a];
                     a++;
             }
         }
@@ -110,6 +113,7 @@ function createGameField (gameCards){
     createTable(gameField);
 }
 
+// function to print the gamefield to HTML document
 function createTable(gameField){
     // creatres html table
     let html = "<table border='2' cellpadding='20'>";
@@ -144,7 +148,6 @@ function hideCards(){
     // function to chose the first card
     pickCardOne(cardToChose);
 }
-
 
 // function to pick the first card
 function pickCardOne(cardToChose){
