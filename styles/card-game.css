@@ -23,15 +23,16 @@
 .memoryGameContainer {
     width: 800px;
     height: 830px;
-    display: flex;
+    display: none;
     flex-direction: column;
     /* margin: auto; */
     background-image: url(../media/pictures/table.jpg);
     border: rgb(163, 127, 43) 10px groove;
+    position: absolute;
     justify-content: center;
     align-items: center;
-    
-    display: none;
+    opacity: 0;
+
 }
 
 #hitImage {

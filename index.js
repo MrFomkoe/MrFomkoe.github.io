@@ -125,11 +125,17 @@ arrowLeft.addEventListener("click", function () {
     // console.log('active character is: ', activeCharacter);
 });
 
-let wrapperContentSlideFour
+let wrapperContentSlideFour = document.querySelector('.slide-wrapper-content-four');
+let activeCharacterSlideFour = document.querySelector('.activeCharacterFour')
+
+let wrapperContentSlideFive = document.querySelector('.slide-wrapper-content-five');
+let activeCharacterSlideFive = document.querySelector('.activeCharacterFive')
+
+let wizardSlideFive = document.querySelector('.wizardSlideFive')
 
 // function that adds the character 
-function addCharacter(){
-    let wrapperContent = document.querySelector('.slide-wrapper-content');
+function addCharacter(wrapperContent, characterBox){
+    // let wrapperContent = document.querySelector('.slide-wrapper-content-four');
     let characterToShow = document.createElement('IMG');
     characterToShow.src = characters[activeCharacter].src;
     characterToShow.className = 'character active';
@@ -140,9 +146,25 @@ function addCharacter(){
         height: 200px;
         opacity: 0;
         `;
-    document.querySelector('.activeCharacter').appendChild(characterToShow);
+    characterBox.appendChild(characterToShow);
     increaseOpacityCharacter(characterToShow);
     increaseOpacityCharacter(wrapperContent);
+}
+
+function addWizard(characterBox){
+    // let wrapperContent = document.querySelector('.slide-wrapper-content-four');
+    let wizardToShow = document.createElement('IMG');
+    wizardToShow.src = './media/pictures/wizard.png';
+    wizardToShow.className = 'character active';
+
+    wizardToShow.style.cssText = `
+        position: relative;
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+        `;
+    characterBox.appendChild(wizardToShow);
+    increaseOpacityCharacter(wizardToShow);
 }
 
 // function that changes opacity for the added character
@@ -158,6 +180,24 @@ function increaseOpacityCharacter(characterToShow){
 function nextGame(){
     modalWon.style.display = 'none';
     modalLostButContinue.style.display = 'none';
-    addCharacter();
+    addCharacter(wrapperContentSlideFive, activeCharacterSlideFive);
+    addWizard(wizardSlideFive);
+}
+
+function runMemoryGame(wrapperContent){
+    memoryGameContainer.style.display = 'flex';
+    memoryGameContainer.animate([
+        {opacity: 1,},
+    ],  {
+        duration: 1000,
+        iterations: 1,
+        fill: 'forwards'})            
+
+    wrapperContent.animate([
+        {opacity: 0,},
+    ],  {
+        duration: 500,
+        iterations: 1,
+        fill: 'forwards'})
 }
 

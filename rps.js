@@ -40,13 +40,13 @@
         // defines whole container with game
         const rpsContainer = document.querySelector('.rockPaperScissorsContainer');
 
-        // defines wrapper that fades when game starts
-        const wrapperContent = document.querySelector('.slide-wrapper-content');
+        // // defines wrapper that fades when game starts
+        // const wrapperContent = document.querySelector('.slide-wrapper-content');
 
         // defines the div that doesn't allow to click when the turn runs
         const cantClickDiv = document.querySelector('.cantClick');
 
-        function runRPS(){
+        function runRPS(wrapperContent){
             rpsContainer.style.display = "block";
             rpsContainer.animate([
                 {opacity: 1,},

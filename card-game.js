@@ -1,3 +1,5 @@
+let memoryGameContainer = document.querySelector('.memoryGameContainer')
+
 // defines button so it could be hidden by script
 let gameStartButton = document.getElementById('gameStartButton');
 

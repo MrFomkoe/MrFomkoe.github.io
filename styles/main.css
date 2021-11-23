@@ -164,7 +164,7 @@ transition: all 0.1s ease-out;
   padding: 1em;
 }
 
-.slide-wrapper-content{
+.slide-wrapper-content-four, .slide-wrapper-content-five{
   opacity: 0;
 }
 
@@ -173,9 +173,16 @@ transition: all 0.1s ease-out;
 }
 
 
-.activeCharacter{
+.activeCharacterFour, .activeCharacterFive{
   display: flex;
   position:absolute;
   left: 20%;
   top: 30%;
+}
+
+.wizardSlideFive{
+  display: flex;
+  position:absolute;
+  right: 20%;
+  top: 30%;  
 }
