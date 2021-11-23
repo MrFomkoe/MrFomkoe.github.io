@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./styles/helper-class.css" />
   <link rel="stylesheet" href="./styles/modal.css" />
   <link rel="stylesheet" href="./styles/rps-style.css" />
+  <link rel="stylesheet" href="./styles/card-game.css"/>
   <title>New Tab.</title>
 </head>
 
@@ -21,7 +22,7 @@
     <!-- <iframe src="./media/audio/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe> -->
 
     <audio class="audioControls" id="audio" controls loop>
-      <source src="./media/audio/main-theme.mp3" type="audio/mpeg">
+      <source src="" type="audio/mpeg">
     </audio>
 
     <!-- 1. SLAIDS -->
@@ -87,13 +88,14 @@
 
       <!-- 2. SLAIDS -->
       <div class="slide" id="slide-2">
+        <img class="wizard" src="./media/pictures/wizard.png">
         <div class="content-wrapper">
-          <h4 class="heading-content">Hi, there!</h4>
+          <h4 class="heading-content">Welcome, adventurer!</h4>
           <p class="margin-bottom--16">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
-            recusandae porro temporibus distinctio impedit aperiam iure quae
-            cumque placeat. Asperiores quis ipsa expedita aliquid at? Magni
-            voluptate voluptas quisquam voluptatum.
+            We are glad to see you here and glad that you volunteered to pass our trials.<br>
+            It won't be easy, but the reward is worth it.<br>
+            Several tests await you in the dungeon ahead. After completing them, you can get a decent reward.<br>
+            Good luck!
           </p>
           <a href="#slide-3" class="btn primary"><h1>I am ready!</h1></a>
         </div>
@@ -170,7 +172,7 @@
               <!-- Modal content -->
               <div class="modal-content">
                   <p>Congrats, you WON!</p><br>
-                  <p><button id="moveForth" onclick="restart()">CONTINUE TO NEXT GAME</button></p>
+                  <a href="#slide-5" class="btn primary" onclick="nextGame(), playMainTheme()"><h1>CONTINUE TO NEXT GAME</h1></a>
               </div>
           </div>
   
@@ -246,7 +248,37 @@
           </div>
         </div>
       </div>
-    <!-- 5. SLAIDS -->
+      <!-- 5. SLAIDS -->
+      <div class="slideGame" id="slide-5">
+        <!-- <audio id='battleMusic'>
+          <source src="./media/audio/battle-theme.mp3">
+        </audio> -->
+        <audio id="hitSound">
+            <source src="./media/audio/hit-sound.wav" type="audio/wav">
+        </audio>
+        <audio id="killSound">
+            <source src="./media/audio/kill-sound.mp3" type="audio/mpeg">
+        </audio>
+        
+        <div class="activeCharacter"></div>
+
+        <div class="content-wrapper slide-wrapper-content">
+          <h4 class="heading-content"></h4>
+          <p class="margin-bottom--16">
+            bla bla bla
+          </p>
+          <a class="btn primary" onclick="runRPS(); changeThemeToTavern()"><h1>Play Game</h1></a>
+       </div>
+
+        <div class="memoryGameContainer">
+            <img src="./media/pictures/arcana-cards/hit1.png" id='hitImage'>
+            <div id='computerHealthBar'></div>
+            <button id="gameStartButton" onclick="startGame()"><span id="gameStartButtonSpan">START</span></button>
+            <div id="gameFieldContainer"></div>
+            <div id='playerHealthBar'></div>
+        </div>
+
+      </div>
     <!-- 6. SLAIDS -->
     <!-- 7. SLAIDS -->
   </div>
@@ -254,6 +286,7 @@
   <script src="./index.js"></script>
   <script src="./rps.js"></script>
   <script src="./audio.js"></script>
+  <script src="./card-game.js"></script>
 </body>
 
 </html>

@@ -78,7 +78,7 @@ function logoChange(){
             logoContainer.style.display = 'none';
         }, 1000);
 
-        audioPlay()
+        playMainTheme()
 };
 
 
@@ -125,6 +125,8 @@ arrowLeft.addEventListener("click", function () {
     // console.log('active character is: ', activeCharacter);
 });
 
+let wrapperContentSlideFour
+
 // function that adds the character 
 function addCharacter(){
     let wrapperContent = document.querySelector('.slide-wrapper-content');
@@ -134,8 +136,8 @@ function addCharacter(){
 
     characterToShow.style.cssText = `
         position: relative;
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
         opacity: 0;
         `;
     document.querySelector('.activeCharacter').appendChild(characterToShow);
@@ -151,5 +153,11 @@ function increaseOpacityCharacter(characterToShow){
         duration: 2000,
         iterations: 1,
         fill: 'forwards'})
+}
+
+function nextGame(){
+    modalWon.style.display = 'none';
+    modalLostButContinue.style.display = 'none';
+    addCharacter();
 }
 
