@@ -1,99 +1,94 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/flexboxgrid.css" />
+    <link rel="stylesheet" href="./styles/typography.css" />
+    <link rel="stylesheet" href="./styles/themes.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/helper-class.css" />
+    <link rel="stylesheet" href="./styles/modal.css" />
+    <link rel="stylesheet" href="./styles/rps-style.css" />
+    <link rel="stylesheet" href="./styles/snake-style.css" />
+    <title>New Tab.</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./styles/flexboxgrid.css" />
-  <link rel="stylesheet" href="./styles/typography.css" />
-  <link rel="stylesheet" href="./styles/themes.css" />
-  <link rel="stylesheet" href="./styles/main.css" />
-  <link rel="stylesheet" href="./styles/helper-class.css" />
-  <link rel="stylesheet" href="./styles/modal.css" />
-  <link rel="stylesheet" href="./styles/rps-style.css" />
-  <title>New Tab.</title>
-</head>
+  <body>
+    <div class="container">
+      <!-- <iframe src="./media/audio/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe> -->
 
-<body>
-  <div class="container">
-    <!-- <iframe src="./media/audio/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe> -->
+      <audio class="audioControls" id="audio" controls loop>
+        <source src="./media/audio/main-theme.mp3" type="audio/mpeg" />
+      </audio>
 
-    <audio class="audioControls" id="audio" controls loop>
-      <source src="./media/audio/main-theme.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- 1. SLAIDS -->
-    <div class="slide" id="slide-1">
-      <div class="navbar">
-        <button id="myBtn" type="button" class="btn primary size--m">
-          <h2>about us</h2>
-        </button>
-        <button id="login" type="button" class="btn primary size--m">
-          <h2>login</h2>
-        </button>
-        <button id="scoreboard" type="button" class="btn primary size--m">
-          <h2>scoreboard</h2>
-        </button>
-      </div>
-
-      <div class="logoContainer logoAll"></div>
-      <img class="logo logoAll" src="./media/pictures/logo.png">
-      
-
-      <a href="#slide-2" class="btn primary size--s startBTN">
-        <h1>start</h1>
-      </a>
-
-      <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Tris vilmari.<br>
-            Vitalijs , Matiss, Romans
-          </p>
+      <!-- 1. SLAIDS -->
+      <div class="slide" id="slide-1">
+        <div class="navbar">
+          <button id="myBtn" type="button" class="btn primary size--m">
+            <h2>about us</h2>
+          </button>
+          <button id="login" type="button" class="btn primary size--m">
+            <h2>login</h2>
+          </button>
+          <button id="scoreboard" type="button" class="btn primary size--m">
+            <h2>scoreboard</h2>
+          </button>
         </div>
-      </div>
 
-      <div id="myLogin" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close-login">&times;</span>
-            <input type="text" placeholder="Yor Login">
-            <input type="text" placeholder="Password">
+        <div class="logoContainer logoAll"></div>
+        <img class="logo logoAll" src="./media/pictures/logo.png" />
+
+        <a href="#slide-2" class="btn primary size--s startBTN">
+          <h1>start</h1>
+        </a>
+
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>
+              Tris vilmari.<br />
+              Vitalijs , Matiss, Romans
+            </p>
+          </div>
+        </div>
+
+        <div id="myLogin" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close-login">&times;</span>
+            <input type="text" placeholder="Yor Login" />
+            <input type="text" placeholder="Password" />
             <button>Forgot password</button>
-          
+          </div>
+        </div>
+
+        <div id="myScoreboard" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close-scoreboard">&times;</span>
+            <ul class="users">
+              <li>1.vieta</li>
+              <li>2.vieta</li>
+              <li>3.vieta</li>
+              <li>4.vieta</li>
+              <li>5.vieta</li>
+            </ul>
+          </div>
         </div>
       </div>
-
-      <div id="myScoreboard" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close-scoreboard">&times;</span>
-          <ul class="users">
-            <li>1.vieta</li>
-            <li>2.vieta</li>
-            <li>3.vieta</li>
-            <li>4.vieta</li>
-            <li>5.vieta</li>
-          </ul>
-          
-        </div>
-      </div>
-      
-
-    </div>
 
       <!-- 2. SLAIDS -->
       <div class="slide" id="slide-2">
         <div class="content-wrapper">
           <h4 class="heading-content">Hi, there!</h4>
           <p class="margin-bottom--16">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
-            recusandae porro temporibus distinctio impedit aperiam iure quae
-            cumque placeat. Asperiores quis ipsa expedita aliquid at? Magni
-            voluptate voluptas quisquam voluptatum.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident recusandae porro temporibus distinctio
+            impedit aperiam iure quae cumque placeat. Asperiores quis ipsa expedita aliquid at? Magni voluptate voluptas
+            quisquam voluptatum.
           </p>
           <a href="#slide-3" class="btn primary"><h1>I am ready!</h1></a>
         </div>
@@ -101,46 +96,20 @@
 
       <!-- 3. SLAIDS -->
       <div class="slide" id="slide-3">
-        <input
-          type="text"
-          class="input primary size--m"
-          placeholder="enter your name.."
-          id="name"
-        />
+        <input type="text" class="input primary size--m" placeholder="enter your name.." id="name" />
 
         <div class="characterBox">
-          
           <div class="arrowContainer">
-            <img 
-              src="./media/pictures/arrow-left.png" 
-              id="arrowLeft" 
-              alt="" 
-              role="button">
+            <img src="./media/pictures/arrow-left.png" id="arrowLeft" alt="" role="button" />
           </div>
 
           <figure class="characters">
-            <img
-              class="character active js-character"
-              src="./media/pictures/knight.png"
-              alt=""
-            />
-            <img
-              class="character js-character"
-              src="./media/pictures/mage-2.png"
-              alt=""
-            />
-            <img
-              class="character js-character"
-              src="./media/pictures/archer-2.png"
-              alt=""
-            />
+            <img class="character active js-character" src="./media/pictures/knight.png" alt="" />
+            <img class="character js-character" src="./media/pictures/mage-2.png" alt="" />
+            <img class="character js-character" src="./media/pictures/archer-2.png" alt="" />
           </figure>
           <div class="arrowContainer">
-            <img 
-              src="./media/pictures/arrow-right.png" 
-              id="arrowRight" 
-              alt=""
-            />
+            <img src="./media/pictures/arrow-right.png" id="arrowRight" alt="" />
           </div>
         </div>
 
@@ -151,109 +120,106 @@
       <div class="slideGame" id="slide-4">
         <!-- Chosen character will be shown on screen -->
         <div class="activeCharacter"></div>
-          
+
         <div class="content-wrapper slide-wrapper-content">
-            <h4 class="heading-content"></h4>
-            <p class="margin-bottom--16">
-              You walk through the dungeon and hear strange sounds behind the door. The sounds seem to be chatter and lute music.<br>
-              You open the door and see a tavern filled with people drinking, eating and playing games.<br>
-              You were called out by one of the tavern's regulars. He offered you to play his most favourite game "Rock, Paper, Scissors".<br>
-              At first, you didn't want to spend any time, given you had a mission to complete.<br>
-              But then this regular declared that he would give you a key to another premise of the dungeon. Shall you win, of course. He pointed out that without this key you have no possibilities to move any further since the door is unbreakable.<br>
-              Well, it seems you have no options except to win this old drunkard.
-            </p>
-            <a class="btn primary" onclick="runRPS(); changeThemeToTavern()"><h1>Play Game</h1></a>
-         </div>
+          <h4 class="heading-content"></h4>
+          <p class="margin-bottom--16">
+            You walk through the dungeon and hear strange sounds behind the door. The sounds seem to be chatter and lute
+            music.<br />
+            You open the door and see a tavern filled with people drinking, eating and playing games.<br />
+            You were called out by one of the tavern's regulars. He offered you to play his most favourite game "Rock,
+            Paper, Scissors".<br />
+            At first, you didn't want to spend any time, given you had a mission to complete.<br />
+            But then this regular declared that he would give you a key to another premise of the dungeon. Shall you
+            win, of course. He pointed out that without this key you have no possibilities to move any further since the
+            door is unbreakable.<br />
+            Well, it seems you have no options except to win this old drunkard.
+          </p>
+          <a class="btn primary" onclick="runRPS(); changeThemeToTavern()"><h1>Play Game</h1></a>
+        </div>
 
         <div class="rockPaperScissorsContainer">
           <div id="modalWon" class="modal">
-              <!-- Modal content -->
-              <div class="modal-content">
-                  <p>Congrats, you WON!</p><br>
-                  <p><button id="moveForth" onclick="restart()">CONTINUE TO NEXT GAME</button></p>
-              </div>
+            <!-- Modal content -->
+            <div class="modal-content">
+              <p>Congrats, you WON!</p>
+              <br />
+              <p><button id="moveForth" onclick="restart()">CONTINUE TO NEXT GAME</button></p>
+            </div>
           </div>
-  
+
           <div id="modalLost" class="modal">
-              <div class="modal-content">
-                  <p>Sorry, you lost... Try again</p><br>
-                  <p><button id="restartGame" onclick="restart()">RESTART GAME</button></p>
-              </div>
+            <div class="modal-content">
+              <p>Sorry, you lost... Try again</p>
+              <br />
+              <p><button id="restartGame" onclick="restart()">RESTART GAME</button></p>
+            </div>
           </div>
 
           <div id="modalLostButContinue" class="modal">
             <div class="modal-content">
-                <p><span class="playerNameSpan">, </span>you are hopeless. Ha-ha-ha! But, you at least amused the old man. So be it, hold the key and go your own way."<br>
-                  The old man gave you a key to another room in the dungeon, and now you can continue your adventure.</p><br>
-                <p><button id="restartGame" onclick="restart()">RESTART GAME</button></p>
+              <p>
+                <span class="playerNameSpan">, </span>you are hopeless. Ha-ha-ha! But, you at least amused the old man.
+                So be it, hold the key and go your own way."<br />
+                The old man gave you a key to another room in the dungeon, and now you can continue your adventure.
+              </p>
+              <br />
+              <p><button id="restartGame" onclick="restart()">RESTART GAME</button></p>
             </div>
           </div>
-  
+
           <div class="rpsImagesAll">
-  
-              <div class="choiceBox">
-                  <div class="resultBox">
-                      <div class="result">
-                          <span class="resultText resultSpan"> YOUR SCORE IS: </span> 
-                          <span class="userScore resultText resultNumberSpan">0</span>
-                      </div>
-          
-                      <div class="result"> 
-                          <span class="resultText resultSpan"> OPPONENT SCORE IS: </span>
-                          <span class="computerScore resultText resultNumberSpan">0</span>
-                      </div>
-                  </div>
-  
-                  <div class="currentChoice">
-                  
-                      <div id="userChoiceBox">
-                          <img 
-                          id= "userChoiceImg" 
-                          src="./media/pictures/rock.png" 
-                          alt="">
-                      </div>
-                      <div id="computerChoiceBox">
-                          <img 
-                          id="computerChoiceImg"
-                          src="./media/pictures/rock.png" 
-                          alt="">
-                      </div>
-                  </div>
-  
-                  <div id="whoWon"></div>
-  
+            <div class="choiceBox">
+              <div class="resultBox">
+                <div class="result">
+                  <span class="resultText resultSpan"> YOUR SCORE IS: </span>
+                  <span class="userScore resultText resultNumberSpan">0</span>
+                </div>
+
+                <div class="result">
+                  <span class="resultText resultSpan"> OPPONENT SCORE IS: </span>
+                  <span class="computerScore resultText resultNumberSpan">0</span>
+                </div>
               </div>
-  
-              <div class="imagesForChoice">
-                  <div class='cantClick'></div>
-                  <img 
-                      id='rock' 
-                      class='rpsImage' 
-                      src="./media/pictures/rock.png" 
-                      alt="">
-                  <img 
-                      id='paper' 
-                      class='rpsImage' 
-                      src="./media/pictures/paper.png"
-                      alt="">
-                  <img 
-                      id='scissors' 
-                      class='rpsImage' 
-                      src="./media/pictures/scissors.png"
-                      alt="">
+
+              <div class="currentChoice">
+                <div id="userChoiceBox">
+                  <img id="userChoiceImg" src="./media/pictures/rock.png" alt="" />
+                </div>
+                <div id="computerChoiceBox">
+                  <img id="computerChoiceImg" src="./media/pictures/rock.png" alt="" />
+                </div>
               </div>
-              
+
+              <div id="whoWon"></div>
+            </div>
+
+            <div class="imagesForChoice">
+              <div class="cantClick"></div>
+              <img id="rock" class="rpsImage" src="./media/pictures/rock.png" alt="" />
+              <img id="paper" class="rpsImage" src="./media/pictures/paper.png" alt="" />
+              <img id="scissors" class="rpsImage" src="./media/pictures/scissors.png" alt="" />
+            </div>
           </div>
         </div>
       </div>
-    <!-- 5. SLAIDS -->
-    <!-- 6. SLAIDS -->
-    <!-- 7. SLAIDS -->
-  </div>
-  <script src="./modal.js"></script>
-  <script src="./index.js"></script>
-  <script src="./rps.js"></script>
-  <script src="./audio.js"></script>
-</body>
-
+      <!-- 5. SLAIDS -->
+      <!-- 6. SLAIDS -->
+      <div class="slide snake-background flex-row" id="slide-6">
+        <div id="board"></div>
+        <div class="textBox margin-bottom--4">
+          <button type="button" class="flex size--l btn primary" onclick="start()" id="snakeStart"><h4>Ready?</h4></button>
+          <div id="speedBox">Current speed: -</div>
+          <div id="scoreBox">Score: -</div>
+          <div id="hiscoreBox">HiScore: -</div>
+        </div>
+      </div>
+      <!-- 7. SLAIDS -->
+    </div>
+    <script src="./modal.js"></script>
+    <script src="./index.js"></script>
+    <script src="./rps.js"></script>
+    <script src="./snake.js"></script>
+    <script src="./audio.js"></script>
+  </body>
 </html>

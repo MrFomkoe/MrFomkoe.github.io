@@ -2,10 +2,20 @@
   display: flex;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .none {
   display: none;
 }
 
+.margin-bottom--4 {
+  margin-bottom: 0.4em;
+}
+.margin-bottom--8 {
+  margin-bottom: 0.8em;
+}
 .margin-bottom--16 {
   margin-bottom: 1.6em;
 }
