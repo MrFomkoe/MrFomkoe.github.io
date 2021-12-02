@@ -65,9 +65,6 @@ function startGame(){
     // hides start button
     gameStartButton.style.display = 'none';
 
-    // starts playing music
-    changeThemeToBattle();
-
     // dublicates the deck so the cards would have pairs
     const fullDeck = [...gameCards];
     fullDeck.push(...gameCards);

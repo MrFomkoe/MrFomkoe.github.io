@@ -147,6 +147,8 @@
         </div>
 
         <a href="#slide-4" class="btn primary size--s" onclick="addCharacter(wrapperContentSlideFour, activeCharacterSlideFour); addName()"><h1>start</h1></a>
+        <!-- <a href="#slide-4" class="btn primary size--s" onclick="nextGameMemoryGame()"><h1>start</h1></a> -->
+
       </div>
 
       <!-- 4. SLAIDS -->
@@ -172,7 +174,7 @@
               <!-- Modal content -->
               <div class="modal-content">
                   <p>Congrats, you WON!</p><br>
-                  <a href="#slide-5" class="btn primary" onclick="nextGame(), playMainTheme()"><h2>CONTINUE TO NEXT GAME</h2></a>
+                  <a href="#slide-5" class="btn primary" onclick="nextGameMemoryGame(), playMainTheme()"><h2>CONTINUE TO NEXT GAME</h2></a>
               </div>
           </div>
   
@@ -187,7 +189,7 @@
             <div class="modal-content">
                 <p><span class="playerNameSpan">, </span>you are hopeless. Ha-ha-ha! But, you at least amused the old man. So be it, hold the key and go your own way."<br>
                   The old man gave you a key to another room in the dungeon, and now you can continue your adventure.</p><br>
-                <p><a href="#slide-5" class="btn primary" onclick="nextGame(), playMainTheme()"><h2>CONTINUE TO NEXT GAME</h2></a></p>
+                <p><a href="#slide-5" class="btn primary" onclick="nextGameMemoryGame(), playMainTheme()"><h2>CONTINUE TO NEXT GAME</h2></a></p>
             </div>
           </div>
   
@@ -250,18 +252,22 @@
       </div>
       <!-- 5. SLAIDS -->
       <div class="slideGame" id="slide-5">
-        <!-- <audio id='battleMusic'>
-          <source src="./media/audio/battle-theme.mp3">
-        </audio> -->
-        <audio id="hitSound">
+        <span>
+          <audio id="hitSound">
             <source src="./media/audio/hit-sound.wav" type="audio/wav">
-        </audio>
-        <audio id="killSound">
-            <source src="./media/audio/kill-sound.mp3" type="audio/mpeg">
-        </audio>
+          </audio>
+          <audio id="killSound">
+              <source src="./media/audio/kill-sound.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="monsterRoar">
+            <source src="./media/audio/monster-roar.mp3" type="audio/mpeg">
+          </audio>
+        </span>
+
         
         <div class="activeCharacterFive"></div>
         <div class="wizardSlideFive"></div>
+        <img id="monsterSlideFIve" src="./media/pictures/arcana-cards/monster.png">
         <div class="content-wrapper slide-wrapper-content-five">
           <h4 class="heading-content"></h4>
           <p class="margin-bottom--16">

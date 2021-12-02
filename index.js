@@ -167,9 +167,9 @@ function addWizard(characterBox){
     increaseOpacityCharacter(wizardToShow);
 }
 
-// function that changes opacity for the added character
-function increaseOpacityCharacter(characterToShow){
-    characterToShow.animate([
+// function that changes opacity for all elements passed in function
+function increaseOpacityCharacter(element){
+    element.animate([
         {opacity: 1,},
     ],  {
         duration: 2000,
@@ -177,27 +177,43 @@ function increaseOpacityCharacter(characterToShow){
         fill: 'forwards'})
 }
 
-function nextGame(){
+function nextGameMemoryGame(){
     modalWon.style.display = 'none';
     modalLostButContinue.style.display = 'none';
     addCharacter(wrapperContentSlideFive, activeCharacterSlideFive);
     addWizard(wizardSlideFive);
 }
 
-function runMemoryGame(wrapperContent){
-    memoryGameContainer.style.display = 'flex';
-    memoryGameContainer.animate([
-        {opacity: 1,},
-    ],  {
-        duration: 1000,
-        iterations: 1,
-        fill: 'forwards'})            
-
-    wrapperContent.animate([
+function decreaseOpacity(element){
+    element.animate([
         {opacity: 0,},
     ],  {
         duration: 500,
         iterations: 1,
         fill: 'forwards'})
+}
+
+function runMemoryGame(wrapperContent){
+    let monsterRoar = document.getElementById('monsterRoar');
+    monsterRoar.play();
+    stopAudio();
+    let monsterSlideFIve = document.getElementById('monsterSlideFIve');
+    monsterSlideFIve.style.display = 'flex';
+    increaseOpacityCharacter(monsterSlideFIve);
+
+    // function to hide the monster
+    setTimeout(decreaseOpacity, 4000, monsterSlideFIve);
+    decreaseOpacity(wrapperContent);
+    decreaseOpacity(wizardSlideFive);
+
+    setTimeout(() => {
+        // starts playing music
+        changeThemeToBattle();
+        monsterSlideFIve.style.display = 'none';
+        memoryGameContainer.style.display = 'flex';
+        // memoryGameContainer.style.display = 'none';
+        increaseOpacityCharacter(memoryGameContainer);       
+        }, 4500);
+
 }
 

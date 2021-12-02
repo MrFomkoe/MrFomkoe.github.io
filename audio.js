@@ -15,3 +15,7 @@ function changeThemeToBattle(){
     audio.src = './media/audio/battle-theme.mp3';
     audio.play();    
 }
+
+function stopAudio(){
+    audio.pause();
+}

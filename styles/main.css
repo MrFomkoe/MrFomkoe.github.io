@@ -178,6 +178,9 @@ transition: all 0.1s ease-out;
   position:absolute;
   left: 20%;
   top: 30%;
+  /* background-color: blue;
+  width: 100px;
+  height: 100px; */
 }
 
 .wizardSlideFive{
@@ -185,4 +188,15 @@ transition: all 0.1s ease-out;
   position:absolute;
   right: 20%;
   top: 30%;  
+  /* background-color: blue;
+  width: 100px;
+  height: 100px; */
+}
+
+#monsterSlideFIve{
+  display: none;
+  position: absolute;
+  width: 300px;
+  opacity: 0;
+  z-index: 2;
 }
