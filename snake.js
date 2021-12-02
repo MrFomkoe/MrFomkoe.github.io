@@ -1,49 +1,65 @@
-const foodSound = new Audio('./music/food.mp3');
-const gameOverSound = new Audio('./music/gameover.mp3');
-const moveSound = new Audio('./music/move.mp3');
-const musicSound = new Audio('./music/music.mp3');
+const foodSound = new Audio('./media/audio/snake/food.mp3');
+const intoWall = new Audio('./media/audio/snake/collide_into_wall.mp3');
+const intoFire = new Audio('./media/audio/snake/go_into_fire.mp3');
+const moveSound = new Audio('./media/audio/snake/move.mp3');
+const musicSound = new Audio('./media/audio/snake/music-full.mp3');
 
+const board = document.getElementById('board');
 const speedBox = document.getElementById('speedBox');
 const scoreBox = document.getElementById('scoreBox');
 const hiscoreBox = document.getElementById('hiscoreBox');
-const board = document.getElementById('board');
 
 let speed = 5;
 let score = 0;
-let lastPaintTime = 0;
-
 let hiScore = localStorage.getItem('hiScore');
+
+let lastPaintTime = 0;
 
 let inputDir = { x: 0, y: 0 };
 let snakeArr = [{ x: 13, y: 15 }];
 let food = { x: 6, y: 7 };
 
 // Game functions
-function main(ctime) {
+function main(timestamp) {
+  timestamp = timestamp || new Date().getTime()
   window.requestAnimationFrame(main);
-  if ((ctime - lastPaintTime) / 1000 < 1 / speed) {
+  if ((timestamp - lastPaintTime) / 1000 < 1 / speed) {
     return;
   }
 
-  lastPaintTime = ctime;
+  lastPaintTime = timestamp;
   gameEngine();
 }
 
 function start() {
-  window.requestAnimationFrame(main);
-  document.getElementById("snakeStart").classList.add("none")
+  musicSound.play();
+  window.requestAnimationFrame(main); // http://www.javascriptkit.com/javatutors/requestanimationframe.shtml
+  document.getElementById('snakeStart').classList.add('none');
 }
+
+/*
+var adiv = document.getElementById('mydiv')
+var leftpos = 0
+function movediv(timestamp){
+    leftpos += 5
+    adiv.style.left = leftpos + 'px'
+    requestAnimationFrame(movediv) // call requestAnimationFrame again to animate next frame
+}
+requestAnimationFrame(movediv) // call requestAnimationFrame and pass into it animation function
+*/
 
 function isCollide(snake) {
   // if snake bumps into itself
   for (let i = 1; i < snakeArr.length; i++) {
     if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+      intoFire.play();
       return true;
     }
   }
 
   // if snake collides with boundary of the board
   if (snake[0].x >= 18 || snake[0].x <= 0 || snake[0].y >= 18 || snake[0].y <= 0) {
+    intoWall.play();
     return true;
   }
   return false;
@@ -51,7 +67,6 @@ function isCollide(snake) {
 
 function gameEngine() {
   if (isCollide(snakeArr)) {
-    gameOverSound.play();
     inputDir = { x: 0, y: 0 };
     alert('Game Over, Press any key to play again!');
     snakeArr = [{ x: 13, y: 15 }];
@@ -113,7 +128,7 @@ function randomPosGenerator(a, b) {
   return Math.round(a + (b - a) * Math.random());
 }
 
-console.log(randomPosGenerator(2, 16, snakeArr));
+// console.log(randomPosGenerator(2, 16, snakeArr));
 
 let hiScoreVal = 0;
 if (hiScore === null) {
