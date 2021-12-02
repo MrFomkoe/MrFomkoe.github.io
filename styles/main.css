@@ -91,6 +91,14 @@ body {
   opacity: 0;
 }
 
+.wizard {
+  position: absolute;
+  width: 10%;
+  bottom: 5%;
+  left: 20%;
+  transform: rotateY(180deg);
+}
+
 /* Character Choise Box */
 
 .characterBox {
@@ -153,7 +161,7 @@ transition: all 0.1s ease-out;
   padding: 1em;
 }
 
-.slide-wrapper-content{
+.slide-wrapper-content-four, .slide-wrapper-content-five{
   opacity: 0;
 }
 
@@ -161,9 +169,31 @@ transition: all 0.1s ease-out;
   text-align: justify;
 }
 
-.activeCharacter{
+
+.activeCharacterFour, .activeCharacterFive{
   display: flex;
   position:absolute;
   left: 20%;
   top: 30%;
+  /* background-color: blue;
+  width: 100px;
+  height: 100px; */
+}
+
+.wizardSlideFive{
+  display: flex;
+  position:absolute;
+  right: 20%;
+  top: 30%;  
+  /* background-color: blue;
+  width: 100px;
+  height: 100px; */
+}
+
+#monsterSlideFIve{
+  display: none;
+  position: absolute;
+  width: 300px;
+  opacity: 0;
+  z-index: 2;
 }

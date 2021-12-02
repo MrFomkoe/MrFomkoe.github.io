@@ -1,7 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/rps-style.css">
+    <!-- <link rel="stylesheet" href="./styles/modul.css"> -->
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="rockPaperScissorsContainer">
+        <div id="modalWon" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <p>Congrats, you WON!</p>
+                <button id="moveForth" onclick="restart()">CONTINUE TO NEXT GAME</button>
+            </div>
+        </div>
+
+        <div id="modalLost" class="modal">
+            <div class="modal-content">
+                <p>Sorry, you lost... Try again</p>
+                <button id="restartGame" onclick="restart()">RESTART GAME</button>
+            </div>
+        </div>
+
+        <div class="rpsImagesAll">
+
+            <div class="choiceBox">
+                <div class="resultBox">
+                    <div class="result">
+                        <span class="resultText resultSpan"> YOUR SCORE IS: </span> 
+                        <span class="userScore resultText resultNumberSpan">0</span>
+                    </div>
+        
+                    <div class="result"> 
+                        <span class="resultText resultSpan"> OPPONENT SCORE IS: </span>
+                        <span class="computerScore resultText resultNumberSpan">0</span>
+                    </div>
+                </div>
+
+                <div class="currentChoice">
+                
+                    <div id="userChoiceBox">
+                        <img 
+                        id= "userChoiceImg" 
+                        src="./media/pictures/rock.png" 
+                        alt="">
+                    </div>
+                    <div id="computerChoiceBox">
+                        <img 
+                        id="computerChoiceImg"
+                        src="./media/pictures/rock.png" 
+                        alt="">
+                    </div>
+                </div>
+
+                <div id="whoWon"></div>
+
+            </div>
+
+            <div class="imagesForChoice">
+                <img 
+                    id='rock' 
+                    class='rpsImage' 
+                    src="./media/pictures/rock.png" 
+                    alt="">
+                <img 
+                    id='paper' 
+                    class='rpsImage' 
+                    src="./media/pictures/paper.png"
+                    alt="">
+                <img 
+                    id='scissors' 
+                    class='rpsImage' 
+                    src="./media/pictures/scissors.png"
+                    alt="">
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
         // get the modal
         const modalWon = document.getElementById('modalWon');
         const modalLost = document.getElementById('modalLost');
-        const modalLostButContinue = document.getElementById('modalLostButContinue');
 
         // defines user score show
         let userScoreSpan = document.querySelector('.userScore');
@@ -14,9 +98,6 @@
 
         // defies computer score
         let computerScore = 0;
-
-        // this variable is used if the user loses game
-        let youLost = 0;
 
         //defines image win/lost/draw to show
         const whoWon = document.getElementById('whoWon');
@@ -37,31 +118,6 @@
         // defines computer image to show
         const computerImage = document.getElementById('computerChoiceImg');
 
-        // defines whole container with game
-        const rpsContainer = document.querySelector('.rockPaperScissorsContainer');
-
-        // // defines wrapper that fades when game starts
-        // const wrapperContent = document.querySelector('.slide-wrapper-content');
-
-        // defines the div that doesn't allow to click when the turn runs
-        const cantClickDiv = document.querySelector('.cantClick');
-
-        function runRPS(wrapperContent){
-            rpsContainer.style.display = "block";
-            rpsContainer.animate([
-                {opacity: 1,},
-            ],  {
-                duration: 1000,
-                iterations: 1,
-                fill: 'forwards'})            
-
-            wrapperContent.animate([
-                {opacity: 0,},
-            ],  {
-                duration: 500,
-                iterations: 1,
-                fill: 'forwards'})
-        }
 
         // takes el1 .. elN from choices array
         choices.forEach(function (possibleChoice){
@@ -74,8 +130,6 @@
                 if (whoWon.style.backgroundImage != null){
                     opacityFade();
                 }
-
-                cantClick();
 
                 animate();
                 //runs user choice and image show func with delay of 1sec
@@ -158,18 +212,11 @@
             console.log('computer score is: ', computerScore);
             computerScoreSpan.innerHTML = computerScore;
 
-            if (userScore == 2){
-                modalWon.style.display = 'flex';
+            if (userScore == 3){
+                modalWon.style.display = 'block';
             }
-            if (computerScore == 2 ){
-                youLost++;
-                if (youLost == 1){
-                    modalLost.style.display = 'flex';
-                }
-                if (youLost == 2){
-                    modalLostButContinue.style.display = 'flex';
-                }
-
+            if (computerScore == 3){
+                modalLost.style.display = 'block';
             }
         }
 
@@ -180,8 +227,6 @@
                 duration: 250,
                 iterations: 1,
                 fill: 'forwards'})
-
-            
         }
 
         function opacityFade(){
@@ -200,12 +245,8 @@
             computerScoreSpan.innerHTML = computerScore;
             modalLost.style.display = 'none';
             modalWon.style.display = 'none';
-            modalLostButContinue.style.display = 'none';
         }
 
-        function cantClick (){
-            cantClickDiv.style.display = 'block';
-            setTimeout(function(){
-                cantClickDiv.style.display = 'none'
-            }, 2150);
-        }
+    </script>
+</body>
+</html>

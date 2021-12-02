@@ -1,0 +1,135 @@
+@import url('http://fonts.cdnfonts.com/css/silkscreen');
+
+.rockPaperScissorsContainer{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: rgb(162, 168, 182) 10px groove;
+    opacity: 0;
+    /* background-color: tomato; */
+
+}
+
+/* Big container with choices and result box */
+.choiceBox {
+    width: 900px;
+    height: 450px;
+    /* background-color:cornflowerblue; */
+    background-image: url(./media/pictures/tavern.jpg);
+    background-repeat:no-repeat;
+    background-size:contain;
+}
+    /* Result box */
+    .resultBox {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        /* background-color: cadetblue; */
+    }
+
+    .result {
+        margin-top: 20px;
+        position: relative;
+        width: 220px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* padding: 0p0x 20px; */
+        /* border: solid 2px black; */
+        background-image: url(./media/pictures/base.png);
+        background-size:contain;
+        background-repeat: no-repeat;
+    }
+
+    .resultText{
+        position: relative;
+        font-family: 'Silkscreen', sans-serif;
+        font-size: 1.5em;
+        text-align: initial;
+        color: rgb(255, 255, 255);
+    }
+
+    .resultSpan{
+        padding: 0 0 10px 25px;
+    }
+
+    .resultNumberSpan{
+        padding: 0 25px 10px 0;
+    }
+
+    /* User and computer chosen pictures */
+    .currentChoice {
+        width: 100%;
+        height: 220px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        /* background-color: green; */
+    }
+
+    #userChoiceBox, #computerChoiceBox {
+        display: flex;
+        width: 200px;
+        height: 200px;
+        margin-top: 50px;
+        /* background-color: greenyellow; */
+    }
+
+    #userChoiceImg, #computerChoiceImg {
+        display: block;
+        height: 200px;
+        margin: auto;
+        /* background-color: indigo; */
+    }
+
+    #userChoiceImg {
+        transform: rotate(90deg);
+    }
+
+    #computerChoiceImg {
+        transform: scaleX(-1) rotate(90deg);
+    }
+
+#whoWon{
+    width: 100%;
+    height: 80px;
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    /* background-color: yellow; */
+}
+
+
+/* Panel with possible choices */
+.imagesForChoice {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 250px;
+    background-image: url(./media/pictures/table.jpg);
+    /* background-color:coral */
+}
+
+.rpsImage {
+    transition: 0.2s;
+    max-width: auto;
+    height: 80%;
+    margin: auto;
+}
+
+.rpsImage:hover {
+    transform: scale(1.1);
+    cursor:grab;
+}
+
+.rpsImage:active {
+    transform: scale(1);
+}
+
+
+

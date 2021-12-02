@@ -83,12 +83,14 @@
 
       <!-- 2. SLAIDS -->
       <div class="slide" id="slide-2">
+        <img class="wizard" src="./media/pictures/wizard.png">
         <div class="content-wrapper">
-          <h4 class="heading-content">Hi, there!</h4>
+          <h4 class="heading-content">Welcome, adventurer!</h4>
           <p class="margin-bottom--16">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident recusandae porro temporibus distinctio
-            impedit aperiam iure quae cumque placeat. Asperiores quis ipsa expedita aliquid at? Magni voluptate voluptas
-            quisquam voluptatum.
+            We are glad to see you here and glad that you volunteered to pass our trials.<br>
+            It won't be easy, but the reward is worth it.<br>
+            Several tests await you in the dungeon ahead. After completing them, you can get a decent reward.<br>
+            Good luck!
           </p>
           <a href="#slide-3" class="btn primary"><h1>I am ready!</h1></a>
         </div>
@@ -113,58 +115,50 @@
           </div>
         </div>
 
-        <a href="#slide-4" class="btn primary size--s" onclick="addCharacter(); addName()"><h1>start</h1></a>
+        <a href="#slide-4" class="btn primary size--s" onclick="addCharacter(wrapperContentSlideFour, activeCharacterSlideFour); addName()"><h1>start</h1></a>
+        <!-- <a href="#slide-4" class="btn primary size--s" onclick="nextGameMemoryGame()"><h1>start</h1></a> -->
+
       </div>
 
       <!-- 4. SLAIDS -->
       <div class="slideGame" id="slide-4">
         <!-- Chosen character will be shown on screen -->
-        <div class="activeCharacter"></div>
-
-        <div class="content-wrapper slide-wrapper-content">
-          <h4 class="heading-content"></h4>
-          <p class="margin-bottom--16">
-            You walk through the dungeon and hear strange sounds behind the door. The sounds seem to be chatter and lute
-            music.<br />
-            You open the door and see a tavern filled with people drinking, eating and playing games.<br />
-            You were called out by one of the tavern's regulars. He offered you to play his most favourite game "Rock,
-            Paper, Scissors".<br />
-            At first, you didn't want to spend any time, given you had a mission to complete.<br />
-            But then this regular declared that he would give you a key to another premise of the dungeon. Shall you
-            win, of course. He pointed out that without this key you have no possibilities to move any further since the
-            door is unbreakable.<br />
-            Well, it seems you have no options except to win this old drunkard.
-          </p>
-          <a class="btn primary" onclick="runRPS(); changeThemeToTavern()"><h1>Play Game</h1></a>
-        </div>
+        <div class="activeCharacterFour"></div>
+          
+        <div class="content-wrapper slide-wrapper-content-four size--s">
+            <h4 class="heading-content"></h4>
+            <p class="margin-bottom--16">
+              You walk through the dungeon and hear strange sounds behind the door. The sounds seem to be chatter and lute music.<br>
+              You open the door and see a tavern filled with people drinking, eating and playing games.<br>
+              You were called out by one of the tavern's regulars. He offered you to play his most favourite game "Rock, Paper, Scissors".<br>
+              At first, you didn't want to spend any time, given you had a mission to complete.<br>
+              But then this regular declared that he would give you a key to another premise of the dungeon. Shall you win, of course. He pointed out that without this key you have no possibilities to move any further since the door is unbreakable.<br>
+              Well, it seems you have no options except to win this old drunkard.
+            </p>
+            <a class="btn primary" onclick="runRPS(wrapperContentSlideFour); changeThemeToTavern()"><h1>Play Game</h1></a>
+         </div>
 
         <div class="rockPaperScissorsContainer">
           <div id="modalWon" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-              <p>Congrats, you WON!</p>
-              <br />
-              <p><button id="moveForth" onclick="restart()">CONTINUE TO NEXT GAME</button></p>
-            </div>
+              <!-- Modal content -->
+              <div class="modal-content">
+                  <p>Congrats, you WON!</p><br>
+                  <a href="#slide-5" class="btn primary" onclick="nextGameMemoryGame(), playMainTheme()"><h4>CONTINUE TO NEXT GAME</h4></a>
+              </div>
           </div>
 
           <div id="modalLost" class="modal">
-            <div class="modal-content">
-              <p>Sorry, you lost... Try again</p>
-              <br />
-              <p><button id="restartGame" onclick="restart()">RESTART GAME</button></p>
-            </div>
+              <div class="modal-content">
+                  <p>Sorry, you lost... Try again</p><br>
+                  <a id="restartGame" class="btn primary" onclick="restart()"><h4>RESTART GAME</h4></a>
+              </div>
           </div>
 
           <div id="modalLostButContinue" class="modal">
             <div class="modal-content">
-              <p>
-                <span class="playerNameSpan">, </span>you are hopeless. Ha-ha-ha! But, you at least amused the old man.
-                So be it, hold the key and go your own way."<br />
-                The old man gave you a key to another room in the dungeon, and now you can continue your adventure.
-              </p>
-              <br />
-              <p><button id="restartGame" onclick="restart()">RESTART GAME</button></p>
+                <p><span class="playerNameSpan">, </span>you are hopeless. Ha-ha-ha! But, you at least amused the old man. So be it, hold the key and go your own way."<br>
+                  The old man gave you a key to another room in the dungeon, and now you can continue your adventure.</p><br>
+                <a href="#slide-5" class="btn primary" onclick="nextGameMemoryGame(), playMainTheme()"><h4>CONTINUE TO NEXT GAME</h4></a>
             </div>
           </div>
 
@@ -204,22 +198,62 @@
         </div>
       </div>
       <!-- 5. SLAIDS -->
-      <!-- 6. SLAIDS -->
-      <div class="slide snake-background flex-row" id="slide-6">
-        <div id="board"></div>
-        <div class="textBox margin-bottom--4">
-          <button type="button" class="flex size--l btn primary" onclick="start()" id="snakeStart"><h4>Ready?</h4></button>
-          <div id="speedBox">Current speed: -</div>
-          <div id="scoreBox">Score: -</div>
-          <div id="hiscoreBox">HiScore: -</div>
+      <div class="slideGame" id="slide-5">
+        <span>
+          <audio id="hitSound">
+            <source src="./media/audio/hit-sound.wav" type="audio/wav">
+          </audio>
+          <audio id="killSound">
+              <source src="./media/audio/kill-sound.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="monsterRoar">
+            <source src="./media/audio/monster-roar.mp3" type="audio/mpeg">
+          </audio>
+        </span>
+
+        
+        <div class="activeCharacterFive"></div>
+        <div class="wizardSlideFive"></div>
+        <img id="monsterSlideFIve" src="./media/pictures/arcana-cards/monster.png">
+        <div class="content-wrapper slide-wrapper-content-five">
+          <h4 class="heading-content"></h4>
+          <p class="margin-bottom--16">
+            Congratulations, you've passed the first trial. Frankly speaking, it was the easiest one.
+            Now you have to face your fears. Fight them. Overcome them. 
+            The next room in this dungeon contains the darkest creatures you will ever stump upon in your life.
+            Let's see if you can win this battle.
+            Each turn you don't hit your foe, it hits you. Only the strong adventurer can get through here. <span class="playerNameSpan">, </span> are you strong enough?
+          </p>
+          <a class="btn primary" onclick="runMemoryGame(wrapperContentSlideFive)"><h1>Play Game</h1></a>
+       </div>
+
+        <div class="memoryGameContainer">
+            <img src="./media/pictures/arcana-cards/hit1.png" id='hitImage'>
+            <div id='computerHealthBar'></div>
+            <button id="gameStartButton" onclick="startGame()"><span id="gameStartButtonSpan">START</span></button>
+            <div id="gameFieldContainer"></div>
+            <div id='playerHealthBar'></div>
         </div>
+
       </div>
-      <!-- 7. SLAIDS -->
+    <!-- 6. SLAIDS -->
+    <div class="slide snake-background flex-row" id="slide-6">
+      <div id="board"></div>
+      <div class="textBox margin-bottom--4">
+        <button type="button" class="flex size--l btn primary" onclick="start()" id="snakeStart"><h4>Ready?</h4></button>
+        <div id="speedBox">Current speed: -</div>
+        <div id="scoreBox">Score: -</div>
+        <div id="hiscoreBox">HiScore: -</div>
+      </div>
     </div>
-    <script src="./modal.js"></script>
-    <script src="./index.js"></script>
-    <script src="./rps.js"></script>
-    <script src="./snake.js"></script>
-    <script src="./audio.js"></script>
-  </body>
+    <!-- 7. SLAIDS -->
+  </div>
+  <script src="./modal.js"></script>
+  <script src="./index.js"></script>
+  <script src="./rps.js"></script>
+  <script src="./audio.js"></script>
+  <script src="./card-game.js"></script>
+  <script src="./snake.js"></script>
+</body>
+
 </html>

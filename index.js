@@ -78,7 +78,7 @@ function logoChange(){
             logoContainer.style.display = 'none';
         }, 1000);
 
-        audioPlay()
+        playMainTheme()
 };
 
 
@@ -125,31 +125,96 @@ arrowLeft.addEventListener("click", function () {
     // console.log('active character is: ', activeCharacter);
 });
 
+let wrapperContentSlideFour = document.querySelector('.slide-wrapper-content-four');
+let activeCharacterSlideFour = document.querySelector('.activeCharacterFour')
+
+let wrapperContentSlideFive = document.querySelector('.slide-wrapper-content-five');
+let activeCharacterSlideFive = document.querySelector('.activeCharacterFive')
+
+let wizardSlideFive = document.querySelector('.wizardSlideFive')
+
 // function that adds the character 
-function addCharacter(){
-    let wrapperContent = document.querySelector('.slide-wrapper-content');
+function addCharacter(wrapperContent, characterBox){
+    // let wrapperContent = document.querySelector('.slide-wrapper-content-four');
     let characterToShow = document.createElement('IMG');
     characterToShow.src = characters[activeCharacter].src;
     characterToShow.className = 'character active';
 
     characterToShow.style.cssText = `
         position: relative;
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
         opacity: 0;
         `;
-    document.querySelector('.activeCharacter').appendChild(characterToShow);
+    characterBox.appendChild(characterToShow);
     increaseOpacityCharacter(characterToShow);
     increaseOpacityCharacter(wrapperContent);
 }
 
-// function that changes opacity for the added character
-function increaseOpacityCharacter(characterToShow){
-    characterToShow.animate([
+function addWizard(characterBox){
+    // let wrapperContent = document.querySelector('.slide-wrapper-content-four');
+    let wizardToShow = document.createElement('IMG');
+    wizardToShow.src = './media/pictures/wizard.png';
+    wizardToShow.className = 'character active';
+
+    wizardToShow.style.cssText = `
+        position: relative;
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+        `;
+    characterBox.appendChild(wizardToShow);
+    increaseOpacityCharacter(wizardToShow);
+}
+
+// function that changes opacity for all elements passed in function
+function increaseOpacityCharacter(element){
+    element.animate([
         {opacity: 1,},
     ],  {
         duration: 2000,
         iterations: 1,
         fill: 'forwards'})
+}
+
+function nextGameMemoryGame(){
+    modalWon.style.display = 'none';
+    modalLostButContinue.style.display = 'none';
+    modalLost.style.display = 'none';
+    addCharacter(wrapperContentSlideFive, activeCharacterSlideFive);
+    addWizard(wizardSlideFive);
+}
+
+function decreaseOpacity(element){
+    element.animate([
+        {opacity: 0,},
+    ],  {
+        duration: 500,
+        iterations: 1,
+        fill: 'forwards'})
+}
+
+function runMemoryGame(wrapperContent){
+    let monsterRoar = document.getElementById('monsterRoar');
+    monsterRoar.play();
+    stopAudio();
+    let monsterSlideFIve = document.getElementById('monsterSlideFIve');
+    monsterSlideFIve.style.display = 'flex';
+    increaseOpacityCharacter(monsterSlideFIve);
+
+    // function to hide the monster
+    setTimeout(decreaseOpacity, 4000, monsterSlideFIve);
+    decreaseOpacity(wrapperContent);
+    decreaseOpacity(wizardSlideFive);
+
+    setTimeout(() => {
+        // starts playing music
+        changeThemeToBattle();
+        monsterSlideFIve.style.display = 'none';
+        memoryGameContainer.style.display = 'flex';
+        // memoryGameContainer.style.display = 'none';
+        increaseOpacityCharacter(memoryGameContainer);       
+        }, 4500);
+
 }
 

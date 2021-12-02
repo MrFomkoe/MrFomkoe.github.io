@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="run()">
+
+    <!-- <div class='devil'></div> -->
+    <img class='devil card' src='./media/pictures/arcana-cards/emperor.png'>
+
+    <script>
+function run(){
+
+const gameCards = [
+    {
+        name: 'devil',
+        image: './media/pictures/arcana-cards/devil.png'
+    },
+    {
+        name: 'emperor',
+        image: './media/pictures/arcana-cards/emperor.png'
+    },
+    {
+        name: 'judgement',
+        image: './media/pictures/arcana-cards/judgement.png'
+    },
+    {
+        name: 'magician',
+        image: './media/pictures/arcana-cards/magician.png'
+    },
+    {
+        name: 'star',
+        image: './media/pictures/arcana-cards/star.png'
+    },
+    {
+        name: 'tower',
+        image: './media/pictures/arcana-cards/tower.png'
+    },    
+]
+
+// let div = document.querySelector('.devil')
+let myImage = document.querySelector('.devil');
+let classes = myImage.className;
+
+let source = gameCards.find(matchSource).image;
+
+function matchSource(element){
+        return element.name == myImage.classList.item(0)
+}
+
+console.log('my image is: ', myImage)
+console.log('the classes are: ',classes)
+
+console.log('source is: ', source);
+}
+
+    </script>
+</body>
+</html>
