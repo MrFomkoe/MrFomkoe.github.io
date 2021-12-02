@@ -180,6 +180,7 @@ function increaseOpacityCharacter(element){
 function nextGameMemoryGame(){
     modalWon.style.display = 'none';
     modalLostButContinue.style.display = 'none';
+    modalLost.style.display = 'none';
     addCharacter(wrapperContentSlideFive, activeCharacterSlideFive);
     addWizard(wizardSlideFive);
 }

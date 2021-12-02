@@ -158,15 +158,18 @@
             console.log('computer score is: ', computerScore);
             computerScoreSpan.innerHTML = computerScore;
 
-            if (userScore == 1){
+            if (userScore == 10){
                 modalWon.style.display = 'flex';
             }
-            if (computerScore == 10){
+            if (computerScore == 1){
                 youLost++;
-                if (youLost == 2){
-                modalLostButContinue.style.display = 'flex';
+                if (youLost == 1){
+                    modalLost.style.display = 'flex';
                 }
-                modalLost.style.display = 'flex';
+                if (youLost == 2){
+                    modalLostButContinue.style.display = 'flex';
+                }
+
             }
         }
 
