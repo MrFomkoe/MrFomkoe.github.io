@@ -22,7 +22,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 500vh; /* Par katru slaidu + 100vh*/
+  height: 600vh; /* Par katru slaidu + 100vh*/
 }
 
 .slide {
