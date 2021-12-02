@@ -90,10 +90,10 @@ function addName (){
         playerName = 'Player';
     }
     headingContent.forEach(function (heading){
-        heading.innerHTML = playerName;
+        heading.innerHTML = playerName + ', ';
     });
     playerNameSpan.forEach(function (heading){
-        heading.innerHTML = playerName + ', ';
+        heading.innerHTML = playerName;
     });
 }
 

@@ -137,32 +137,9 @@
               Well, it seems you have no options except to win this old drunkard.
             </p>
             <a class="btn primary" onclick="runRPS(wrapperContentSlideFour); changeThemeToTavern()"><h1>Play Game</h1></a>
-         </div>
+        </div>
 
         <div class="rockPaperScissorsContainer">
-          <div id="modalWon" class="modal">
-              <!-- Modal content -->
-              <div class="modal-content">
-                  <p>Congrats, you WON!</p><br>
-                  <a href="#slide-5" class="btn primary" onclick="nextGameMemoryGame(), playMainTheme()"><h4>CONTINUE TO NEXT GAME</h4></a>
-              </div>
-          </div>
-
-          <div id="modalLost" class="modal">
-              <div class="modal-content">
-                  <p>Sorry, you lost... Try again</p><br>
-                  <a id="restartGame" class="btn primary" onclick="restart()"><h4>RESTART GAME</h4></a>
-              </div>
-          </div>
-
-          <div id="modalLostButContinue" class="modal">
-            <div class="modal-content">
-                <p><span class="playerNameSpan">, </span>you are hopeless. Ha-ha-ha! But, you at least amused the old man. So be it, hold the key and go your own way."<br>
-                  The old man gave you a key to another room in the dungeon, and now you can continue your adventure.</p><br>
-                <a href="#slide-5" class="btn primary" onclick="nextGameMemoryGame(), playMainTheme()"><h4>CONTINUE TO NEXT GAME</h4></a>
-            </div>
-          </div>
-
           <div class="rpsImagesAll">
             <div class="choiceBox">
               <div class="resultBox">
@@ -197,6 +174,33 @@
             </div>
           </div>
         </div>
+
+        <div id="modalWon" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+              <p>"Oh. Seems the luck is on your side <span class="playerNameSpan"></span>. Well, as it was agreed, take the key. Farewell!"<br>
+                The tavern's regular gives you the key and now you can continue your journey.
+                </p><br>
+              <a href="#slide-5" class="btn primary" onclick="nextGameMemoryGame(), playMainTheme()"><h4>CONTINUE TO NEXT GAME</h4></a>
+          </div>
+        </div>
+
+        <div id="modalLost" class="modal">
+            <div class="modal-content">
+                <p>"Ha, <span class="playerNameSpan"></span>, seems the luck is on my side today. Yet, it was fun.<br> 
+                  So I'll give you one more chance to win me and get the key. Let's start."</p><br>
+                <a id="restartGame" class="btn primary" onclick="restart()"><h4>RESTART GAME</h4></a>
+            </div>
+        </div>
+
+        <div id="modalLostButContinue" class="modal">
+          <div class="modal-content">
+            <p>"<span class="playerNameSpan"></span>, you are hopeless. Ha-ha-ha! But, you at least amused the old man. So be it, hold the key and go your own way."<br>
+              The old man gave you a key to another room in the dungeon, and now you can continue your adventure.</p><br>
+            <a href="#slide-5" class="btn primary" onclick="nextGameMemoryGame(), playMainTheme()"><h4>CONTINUE TO NEXT GAME</h4></a>
+          </div>
+      
+        </div>
       </div>
       <!-- 5. SLAIDS -->
       <div class="slideGame" id="slide-5">
@@ -219,11 +223,11 @@
         <div class="content-wrapper slide-wrapper-content-five">
           <h4 class="heading-content"></h4>
           <p class="margin-bottom--16">
-            Congratulations, you've passed the first trial. Frankly speaking, it was the easiest one.
-            Now you have to face your fears. Fight them. Overcome them. 
-            The next room in this dungeon contains the darkest creatures you will ever stump upon in your life.
-            Let's see if you can win this battle.
-            Each turn you don't hit your foe, it hits you. Only the strong adventurer can get through here. <span class="playerNameSpan">, </span> are you strong enough?
+            Congratulations, you've passed the first trial. Frankly speaking, it was the easiest one.<br>
+            Now you have to face your fears. Fight them. Overcome them.<br>
+            The next room in this dungeon contains the darkest creatures you will ever stump upon in your life.<br>
+            Let's see if you can win this battle.<br>
+            Each turn you don't hit your foe, it hits you. Only the strong adventurer can get through here. <span class="playerNameSpan"></span>, are you strong enough?
           </p>
           <a class="btn primary" onclick="runMemoryGame(wrapperContentSlideFive)"><h1>Play Game</h1></a>
        </div>
@@ -234,6 +238,24 @@
             <button id="gameStartButton" onclick="startGame()"><span id="gameStartButtonSpan">START</span></button>
             <div id="gameFieldContainer"></div>
             <div id='playerHealthBar'></div>
+        </div>
+
+        <div id="modalWonCardGame" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+              <p>"Congratulations <span class="playerNameSpan"></span>, you won this fight and now you can go and claim your well-deserved reward.<br>
+                You know, the funny thing is that you can take only that much that you can carry at once.<br>
+                And now we'll see how much treasure you can take, <span class="playerNameSpan"></span>. Good luck!"<br>
+                The wizard opens the next room in the dungeon where you can see myriad treasures. One last thing left to do - to take as much as possible.</p><br>
+              <a href="#slide-6" class="btn primary closeModal"><h4>CONTINUE TO NEXT GAME</h4></a>
+          </div>
+        </div>
+        <div id="modalLostCardGame" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+              <p>Congrats, you WON!</p><br>
+              <a href="#slide-6" class="btn primary closeModal"><h4>CONTINUE TO NEXT GAME</h4></a>
+          </div>
         </div>
 
       </div>

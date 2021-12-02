@@ -288,7 +288,7 @@ function compareCards (one, two, cardToChose){
         console.log('computer health is: ', computerHealth);
         setTimeout(function(){
             if (computerHealth == 0){
-                alert('you won');
+                gameWon();
             }
         }, 500);
 
@@ -317,7 +317,7 @@ function compareCards (one, two, cardToChose){
             setTimeout(showHitEffect, 200);
             setTimeout(function(){
                 if (playerHealth == 0){
-                    alert('you lost');
+                    gameLost();
                 }
             }, 500);
 
@@ -361,3 +361,22 @@ function removeHeart(health, images){
     // images[health].classList.add('fadedHeart');
     // console.log('current heart is', images[health])
 }
+
+function gameWon(){
+    let modalWonCardGame = document.getElementById('modalWonCardGame');
+    modalWonCardGame.style.display = 'flex';
+}
+
+function gameLost(){
+    let modalLostCardGame = document.getElementById('modalLostCardGame');
+    modalLostCardGame.style.display = 'flex';
+}
+
+let closeModal = document.querySelectorAll('.closeModal');
+
+closeModal.forEach(element => {
+    element.addEventListener('click', () => {
+        modalWonCardGame.style.display = 'none';
+        modalLostCardGame.style.display = 'none';
+    })
+});
