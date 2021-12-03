@@ -3,9 +3,6 @@ let memoryGameContainer = document.querySelector('.memoryGameContainer')
 // defines button so it could be hidden by script
 let gameStartButton = document.getElementById('gameStartButton');
 
-// defines theme for game
-// let battleMusic = document.getElementById('battleMusic');
-
 // defines hit sound
 let hitSound = document.getElementById('hitSound');
 // defines kill sound
@@ -15,6 +12,7 @@ let killSound = document.getElementById('killSound');
 // defines game table where cards are placed
 let gameTable = document.getElementById('gameFieldContainer');
 
+// defines "Hit" image to be shown
 let hitEffect = document.getElementById('hitImage');
 
 // defines player health
