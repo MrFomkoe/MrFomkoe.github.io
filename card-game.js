@@ -60,6 +60,8 @@ const gameCards = [
 
 // function to start game
 function startGame(){
+    startTimer();
+    console.log('your time so far is: ', timer);
     // hides start button
     gameStartButton.style.display = 'none';
 
@@ -67,8 +69,8 @@ function startGame(){
     const fullDeck = [...gameCards];
     fullDeck.push(...gameCards);
 
-    console.log('cards are: ', gameCards);
-    console.log('full deck is: ', fullDeck);
+    // console.log('cards are: ', gameCards);
+    // console.log('full deck is: ', fullDeck);
 
     // sets the computer health, which is unique card amount
     computerHealth = gameCards.length;
@@ -216,7 +218,7 @@ function pickCardOne(cardToChose){
                     cardOneChoice.src = gameCards.find(function (e){
                         return e.name === cardOneChoice.classList.item(0);
                     }).image;
-                    console.log('card one choice is: ', cardOneChoice);
+                    // console.log('card one choice is: ', cardOneChoice);
                 }, 75);
             
             // removes event listener so 'first card' can't be chosen again
@@ -241,7 +243,7 @@ function pickCardTwo(cardToChose, cardOneChoice){
 
         // doen't allow the player to choice the card chosen as first
         if (element.target == cardOneChoice){
-            console.log('can`t take this one');
+            // console.log('can`t take this one');
         } else {
             // checks if the card is hidden
             if (element.target.classList.contains('hidden')){
@@ -258,7 +260,7 @@ function pickCardTwo(cardToChose, cardOneChoice){
                             return e.name === cardTwoChoice.classList.item(0);
                         }).image;
 
-                        console.log('card two choice is: ', cardTwoChoice);
+                        // console.log('card two choice is: ', cardTwoChoice);
                     }, 75);
 
                 // removes possibilty to click on cards
@@ -277,16 +279,18 @@ function pickCardTwo(cardToChose, cardOneChoice){
 function compareCards (one, two, cardToChose){
     // if the cards have the same class, that is whether the cards with similar picture
     if (one.className == two.className){
-        console.log('same cards');
+        // console.log('same cards');
 
         // lowers computer health
         computerHealth--;
         removeHeart(computerHealth, computerHealthImages);
         setTimeout(showHitEffect, 200);
-        console.log('computer health is: ', computerHealth);
+        // console.log('computer health is: ', computerHealth);
         setTimeout(function(){
             if (computerHealth == 0){
                 gameWon();
+                stopTimer();
+                console.log('your time so far is: ', timer);
             }
         }, 500);
 
@@ -295,7 +299,7 @@ function compareCards (one, two, cardToChose){
     } else {
         // if the cards are not simiral
         setTimeout(function () {
-            console.log('wrong cards')
+            // console.log('wrong cards')
             let bothCards = [one, two];
             bothCards.forEach(function (element){
                 flipCardBack(element)});
@@ -316,12 +320,14 @@ function compareCards (one, two, cardToChose){
             setTimeout(function(){
                 if (playerHealth == 0){
                     gameLost();
+                    stopTimer();
+                    console.log('your time so far is: ', timer);
                 }
             }, 500);
 
         }, 1000);
 
-        console.log('player health is: ', playerHealth);
+        // console.log('player health is: ', playerHealth);
     }
 }
 

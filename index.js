@@ -31,7 +31,7 @@ logoAll.forEach(function (element){
 // });
 
 function logoChange(){
-        console.log(logoContainer);
+        // console.log(logoContainer);
         logoAll.forEach(function (element){
             element.removeEventListener("click", logoChange)
         });

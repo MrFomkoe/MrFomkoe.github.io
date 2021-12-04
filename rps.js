@@ -47,6 +47,7 @@
         const cantClickDiv = document.querySelector('.cantClick');
 
         function runRPS(wrapperContent){
+            startTimer();
             rpsContainer.style.display = "block";
             rpsContainer.animate([
                 {opacity: 1,},
@@ -109,7 +110,7 @@
             userChoice = element.target.id;
             userImage.src = element.target.src;
             // console.log('user image is: ', userImage);
-            console.log('user choice is: ' + userChoice);
+            // console.log('user choice is: ' + userChoice);
         }
 
         function generateComputerChoice(){
@@ -117,7 +118,7 @@
             const randomNumber = Math.floor(Math.random() * choices.length);
             // adds id from array to computer choice
             computerChoice = choices[randomNumber].id;
-            console.log('computer choice is: ' + computerChoice);
+            // console.log('computer choice is: ' + computerChoice);
             computerImage.src = choices[randomNumber].src;
         }
 
@@ -125,7 +126,7 @@
         function compare(){
             // checks if user choice is equal to computer choice
             if (userChoice == computerChoice){
-                console.log('the result is: draw');
+                // console.log('the result is: draw');
                 // adds result to screen
                 whoWon.style.backgroundImage = "url('./media/pictures/draw.png')";
                 opacityChange();
@@ -136,7 +137,7 @@
                     case 'rockscissors':
                     case 'paperrock':
                     case 'scissorspaper':
-                        console.log('you win');
+                        // console.log('you win');
                         userScore++;
                         // adds result to screen
                         whoWon.style.backgroundImage = "url('./media/pictures/you-win.png')";
@@ -145,7 +146,7 @@
                     case 'rockpaper':
                     case 'paperscissors':
                     case 'scissorsrock':
-                        console.log('you lost');
+                        // console.log('you lost');
                         computerScore++;
                         // adds result to screen
                         whoWon.style.backgroundImage = "url('./media/pictures/you-lost.png')";
@@ -153,21 +154,27 @@
                         break;
                 }
             }
-            console.log('user score is: ', userScore);
+            // console.log('user score is: ', userScore);
             userScoreSpan.innerHTML = userScore;
-            console.log('computer score is: ', computerScore);
+            // console.log('computer score is: ', computerScore);
             computerScoreSpan.innerHTML = computerScore;
 
-            if (userScore == 2){
+            if (userScore == 1){
                 modalWon.style.display = 'flex';
+                stopTimer();
+                console.log('your time so far is: ', timer);
             }
-            if (computerScore == 2 ){
+            if (computerScore == 1 ){
                 youLost++;
                 if (youLost == 1){
                     modalLost.style.display = 'flex';
+                    stopTimer();
+                    console.log('your time so far is: ', timer);
                 }
                 if (youLost == 2){
                     modalLostButContinue.style.display = 'flex';
+                    stopTimer();
+                    console.log('your time so far is: ', timer);
                 }
 
             }
@@ -201,6 +208,8 @@
             modalLost.style.display = 'none';
             modalWon.style.display = 'none';
             modalLostButContinue.style.display = 'none';
+            startTimer();
+            console.log('your time so far is: ', timer);
         }
 
         function cantClick (){
