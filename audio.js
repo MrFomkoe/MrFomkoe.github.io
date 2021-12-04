@@ -1,3 +1,9 @@
+// defines hit sound
+let hitSound = document.getElementById('hitSound');
+// defines kill sound
+let killSound = document.getElementById('killSound');
+
+// the music player
 const audio = document.getElementById('audio');
 audio.volume = 0.2;
 

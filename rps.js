@@ -76,6 +76,7 @@
                     opacityFade();
                 }
 
+                // calls function that doesn't allow to press any pics until the animation is finished
                 cantClick();
 
                 animate();
@@ -105,6 +106,7 @@
                 direction: 'alternate'})
         }
 
+        // function to take the user choised pic and put it on screen
         function showUserChoice (element){
             // sets userchoice to pressed image's ID
             userChoice = element.target.id;
@@ -159,13 +161,16 @@
             // console.log('computer score is: ', computerScore);
             computerScoreSpan.innerHTML = computerScore;
 
-            if (userScore == 1){
+            // conditionals to define the winner
+            if (userScore == 5){
                 modalWon.style.display = 'flex';
                 stopTimer();
                 console.log('your time so far is: ', timer);
             }
-            if (computerScore == 1 ){
+            if (computerScore == 5){
                 youLost++;
+
+                // conditionals to show how many times player has lost
                 if (youLost == 1){
                     modalLost.style.display = 'flex';
                     stopTimer();
@@ -180,6 +185,7 @@
             }
         }
 
+        // shows the block with text who won
         function opacityChange(){
             whoWon.animate([
                 {opacity: 1,},
@@ -191,6 +197,7 @@
             
         }
 
+        // hides the block with text who won
         function opacityFade(){
             whoWon.animate([
                 {opacity: 0,},
@@ -200,6 +207,7 @@
                 fill: 'forwards'})
         }
 
+        // funtion to restart the game if user has lost
         function restart () {
             userScore = 0;
             userScoreSpan.innerHTML = userScore;
@@ -212,6 +220,7 @@
             console.log('your time so far is: ', timer);
         }
 
+        // displays the invisible block to do not allow the user to click
         function cantClick (){
             cantClickDiv.style.display = 'block';
             setTimeout(function(){
