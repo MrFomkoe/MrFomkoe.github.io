@@ -55,6 +55,10 @@ body {
   background-position: center;
 }
 
+#slide-6{
+  background-image: url("../media/pictures/dungeon-background-treasures.jpg");  
+}
+
 /* Navbar styling*/
 .navbar {
   position: relative;
