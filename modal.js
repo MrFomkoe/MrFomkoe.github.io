@@ -7,18 +7,22 @@ let btn = document.querySelectorAll('.myBtn');
  // Get the <span> element that closes the modal
 let close = document.querySelectorAll('.close');
 
-
+// Makes it possible to work with nodelist
 btn.forEach(element => {
+  // adds event listener to each object of nodelist
   element.addEventListener('click', () => {
+    // takes the index number of 'pressed' button 
     let number = Array.prototype.indexOf.call(btn, element);
+    // changes the display of the modal with the same index number
     modal[number].style.display = "flex";
-    console.log(number);
   })
 })
 
+// Makes it possible to work with nodelist
 close.forEach(element => {
+  // adds event listener to each object of nodelist  
   element.addEventListener('click', () => {
-    console.log(element);
+    // changes the display to all objects of nodelist with modals
     modal.forEach(element => {
       element.style.display = "none";
     })

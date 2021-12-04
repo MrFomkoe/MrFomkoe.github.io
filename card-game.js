@@ -136,7 +136,7 @@ function createGameField (fullDeck){
                     a++;
             }
         }
-    // function that 
+    // function that creates the game field
     createTable(gameField);
 }
 
@@ -180,6 +180,7 @@ function hideCards(){
     pickCardOne(cardToChose);
 }
 
+// flips cards with "back" up
 function flipCardBack(card){
     if (card.classList.contains('flippedFront')){
         card.classList.remove('flippedFront');
@@ -187,6 +188,7 @@ function flipCardBack(card){
     card.classList.add('flippedBack');
 }
 
+// flips cards with "front" up
 function flipCardFront(card){
     if (card.classList.contains('flippedBack')){
         card.classList.remove('flippedBack');
@@ -209,8 +211,7 @@ function pickCardOne(cardToChose){
             element.target.classList.remove('hidden');
             // defines the choice that user made
             let cardOneChoice = element.target;
-            // paints the chosen card 'black'
-            // cardOneChoice.style.background = 'black';
+
             flipCardFront(cardOneChoice);
 
                 setTimeout(function(){
@@ -250,8 +251,7 @@ function pickCardTwo(cardToChose, cardOneChoice){
             element.target.classList.remove('hidden');
                 // if the card is not the same as the first one defines second card
                 let cardTwoChoice = element.target;
-                // paints it yellow
-                // cardTwoChoice.style.background = 'yellow';
+
                 flipCardFront(cardTwoChoice);
 
                     setTimeout(function(){
@@ -331,7 +331,9 @@ function compareCards (one, two, cardToChose){
     }
 }
 
+// shows hit effect on screen
 function showHitEffect(){
+    // conditional that adds sound of "kill"
     if (playerHealth == 0 || computerHealth == 0){
         killSound.play();
     } else {
@@ -352,6 +354,7 @@ function showHitEffect(){
     }, 200);
 }
 
+// function that animates "hearts" when PC or player gets "hit"
 function removeHeart(health, images){
     images[health].animate([
         {transform: 'scale(0.95)', opacity: 0.8},
