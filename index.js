@@ -31,7 +31,7 @@ logoAll.forEach(function (element){
 // });
 
 function logoChange(){
-        console.log(logoContainer);
+        // console.log(logoContainer);
         logoAll.forEach(function (element){
             element.removeEventListener("click", logoChange)
         });
@@ -90,10 +90,10 @@ function addName (){
         playerName = 'Player';
     }
     headingContent.forEach(function (heading){
-        heading.innerHTML = playerName;
+        heading.innerHTML = playerName + ', ';
     });
     playerNameSpan.forEach(function (heading){
-        heading.innerHTML = playerName + ', ';
+        heading.innerHTML = playerName;
     });
 }
 
