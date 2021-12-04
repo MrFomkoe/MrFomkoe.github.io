@@ -30,24 +30,22 @@
 }
 
 .snake {
-  transform: scale(1.8);
+  transform: scale(1.2);
   font-size: 2vmin;
   margin: auto;
   transition: all 0.1s ease-out;
 }
 
 .food {
-  transform: scale(2);
-  font-size: 2vmin;
-  margin: auto;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1.5);
 }
 
 .snake::before {
-  content: '🔥';
-}
-
-.food::before {
-  content: '☢️';
+  content: '🪙';
 }
 
 .textBox {

@@ -28,55 +28,65 @@ function main(timestamp) {
 
   lastPaintTime = timestamp;
   gameEngine();
+}
 
-  window.addEventListener('keydown', (e) => {
-    inputDir = { x: 0, y: 1 };
-    moveSound.play();
-
-    switch (e.key) {
-      case 'ArrowUp':
-        inputDir.x = 0;
-        inputDir.y = -1;
-        break;
-
-      case 'ArrowDown':
-        inputDir.x = 0;
-        inputDir.y = 1;
-        break;
-
-      case 'ArrowLeft':
-        inputDir.x = -1;
-        inputDir.y = 0;
-        break;
-
-      case 'ArrowRight':
-        inputDir.x = 1;
-        inputDir.y = 0;
-        break;
-
-      case 'Enter':
-        start();
-        break;
-    }
-  });
+function moveAndPlaySaound(x, y) {
+  moveSound.play();
+  inputDir.x = x;
+  inputDir.y = y;
 }
 
 function start() {
   playSnakeTheme();
   window.requestAnimationFrame(main); // http://www.javascriptkit.com/javatutors/requestanimationframe.shtml
   document.getElementById('snakeStart').classList.add('none');
-}
 
-/*
-var adiv = document.getElementById('mydiv')
-var leftpos = 0
-function movediv(timestamp){
-    leftpos += 5
-    adiv.style.left = leftpos + 'px'
-    requestAnimationFrame(movediv) // call requestAnimationFrame again to animate next frame
+  window.addEventListener('keydown', (e) => {
+    inputDir = { x: 0, y: 1 };
+
+    switch (e.key) {
+      case 'ArrowUp':
+        moveAndPlaySaound(0, -1);
+        break;
+
+      case 'w':
+        moveAndPlaySaound(0, -1);
+        break;
+
+      case 'ArrowDown':
+        moveAndPlaySaound(0, 1);
+        break;
+
+      case 's':
+        moveAndPlaySaound(0, 1);
+        break;
+
+      case 'ArrowLeft':
+        moveAndPlaySaound(-1, 0);
+        break;
+
+      case 'a':
+        moveAndPlaySaound(-1, 0);
+        break;
+
+      case 'ArrowRight':
+        moveAndPlaySaound(1, 0);
+        break;
+
+      case 'd':
+        moveAndPlaySaound(1, 0);
+        break;
+
+      case 'Enter':
+        start();
+        break;
+
+      default:
+        console.log('Nedarbojas šie taustiņi');
+      // break;
+    }
+  });
 }
-requestAnimationFrame(movediv) // call requestAnimationFrame and pass into it animation function
-*/
 
 function isCollide(snake) {
   // if snake bumps into itself
@@ -138,12 +148,12 @@ function gameEngine() {
     snakeElement.style.gridColumnStart = e.x;
 
     if (i == 0) {
-
       snakeElement.classList.add('head');
-      let src = getActiveCharacter();
-      snakeElement.style.backgroundImage = `url(${src})`;
+      let activeCharacter = getActiveCharacter();
+      snakeElement.style.backgroundImage = `url(${activeCharacter.src})`;
     } else {
       snakeElement.classList.add('snake');
+      snakeElement.style.backgroundImage = `url( Jāieliek PNG monētas attēls, lai stild vienāds būtu )`;
     }
 
     board.appendChild(snakeElement);
@@ -153,7 +163,9 @@ function gameEngine() {
   let foodElement = document.createElement('div');
   foodElement.style.gridRowStart = food.y;
   foodElement.style.gridColumnStart = food.x;
+  foodElement.style.backgroundImage = `url(../media/pictures/treasures.png)`;
   foodElement.classList.add('food');
+
   board.appendChild(foodElement);
 }
 
@@ -163,7 +175,7 @@ function randomPosGenerator(a, b) {
 
 let hiScoreVal = 0;
 
-if (hiScore === null) {
+if (!hiScore) {
   localStorage.setItem('hiScore', JSON.stringify(hiScoreVal));
 } else {
   hiScoreVal = JSON.parse(hiScore);
