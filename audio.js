@@ -15,6 +15,10 @@ function changeThemeToBattle(){
     audio.src = './media/audio/battle-theme.mp3';
     audio.play();    
 }
+function playSnakeTheme(){
+    audio.src = './media/audio/snake/music-full.mp3';
+    audio.play();    
+}
 
 function stopAudio(){
     audio.pause();

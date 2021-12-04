@@ -109,7 +109,7 @@ arrowRight.addEventListener("click", function () {
 
     // add "active" class to current character
     characters[activeCharacter].classList.add("active");
-    // console.log('active character is: ', activeCharacter);
+    console.log('active character is: ', characters[activeCharacter].src);
 });
 
 // changing character to previous
@@ -130,7 +130,6 @@ let activeCharacterSlideFour = document.querySelector('.activeCharacterFour')
 
 let wrapperContentSlideFive = document.querySelector('.slide-wrapper-content-five');
 let activeCharacterSlideFive = document.querySelector('.activeCharacterFive')
-
 let wizardSlideFive = document.querySelector('.wizardSlideFive')
 
 // function that adds the character 
@@ -150,6 +149,14 @@ function addCharacter(wrapperContent, characterBox){
     increaseOpacityCharacter(characterToShow);
     increaseOpacityCharacter(wrapperContent);
 }
+function getActiveCharacter(){
+    let characterToShowSrc = document.querySelector('character active');
+    characterToShowSrc = characters[activeCharacter].src;
+    
+    return characterToShowSrc
+}
+
+console.log("hello: ", getActiveCharacter())
 
 function addWizard(characterBox){
     // let wrapperContent = document.querySelector('.slide-wrapper-content-four');

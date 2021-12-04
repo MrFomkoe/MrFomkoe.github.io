@@ -2,7 +2,6 @@ const foodSound = new Audio('./media/audio/snake/food.mp3');
 const intoWall = new Audio('./media/audio/snake/collide_into_wall.mp3');
 const intoFire = new Audio('./media/audio/snake/go_into_fire.mp3');
 const moveSound = new Audio('./media/audio/snake/move.mp3');
-const musicSound = new Audio('./media/audio/snake/music-full.mp3');
 
 const board = document.getElementById('board');
 const speedBox = document.getElementById('speedBox');
@@ -21,7 +20,7 @@ let food = { x: 6, y: 7 };
 
 // Game functions
 function main(timestamp) {
-  timestamp = timestamp || new Date().getTime()
+  timestamp = timestamp || new Date().getTime();
   window.requestAnimationFrame(main);
   if ((timestamp - lastPaintTime) / 1000 < 1 / speed) {
     return;
@@ -29,10 +28,41 @@ function main(timestamp) {
 
   lastPaintTime = timestamp;
   gameEngine();
+
+  window.addEventListener('keydown', (e) => {
+    inputDir = { x: 0, y: 1 };
+    moveSound.play();
+
+    switch (e.key) {
+      case 'ArrowUp':
+        inputDir.x = 0;
+        inputDir.y = -1;
+        break;
+
+      case 'ArrowDown':
+        inputDir.x = 0;
+        inputDir.y = 1;
+        break;
+
+      case 'ArrowLeft':
+        inputDir.x = -1;
+        inputDir.y = 0;
+        break;
+
+      case 'ArrowRight':
+        inputDir.x = 1;
+        inputDir.y = 0;
+        break;
+
+      case 'Enter':
+        start();
+        break;
+    }
+  });
 }
 
 function start() {
-  musicSound.play();
+  playSnakeTheme();
   window.requestAnimationFrame(main); // http://www.javascriptkit.com/javatutors/requestanimationframe.shtml
   document.getElementById('snakeStart').classList.add('none');
 }
@@ -108,7 +138,10 @@ function gameEngine() {
     snakeElement.style.gridColumnStart = e.x;
 
     if (i == 0) {
+
       snakeElement.classList.add('head');
+      let src = getActiveCharacter();
+      snakeElement.style.backgroundImage = `url(${src})`;
     } else {
       snakeElement.classList.add('snake');
     }
@@ -128,41 +161,11 @@ function randomPosGenerator(a, b) {
   return Math.round(a + (b - a) * Math.random());
 }
 
-// console.log(randomPosGenerator(2, 16, snakeArr));
-
 let hiScoreVal = 0;
-if (hiScore === null) {
-  console.log(hiScore);
 
+if (hiScore === null) {
   localStorage.setItem('hiScore', JSON.stringify(hiScoreVal));
 } else {
   hiScoreVal = JSON.parse(hiScore);
   hiscoreBox.innerHTML = 'HiScore: ' + hiScore;
 }
-
-window.addEventListener('keydown', (e) => {
-  inputDir = { x: 0, y: 1 };
-  moveSound.play();
-
-  switch (e.key) {
-    case 'ArrowUp':
-      inputDir.x = 0;
-      inputDir.y = -1;
-      break;
-
-    case 'ArrowDown':
-      inputDir.x = 0;
-      inputDir.y = 1;
-      break;
-
-    case 'ArrowLeft':
-      inputDir.x = -1;
-      inputDir.y = 0;
-      break;
-
-    case 'ArrowRight':
-      inputDir.x = 1;
-      inputDir.y = 0;
-      break;
-  }
-});
