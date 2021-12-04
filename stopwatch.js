@@ -23,10 +23,17 @@ function count(){
     }
     seconds++;
 
+    if (hours == 0 && minutes == 0){
+        timer = `${seconds} seconds`;
+    } else if (hours == 0){
+        timer = `${minutes} minutes and ${seconds} seconds`;        
+    } else {
+        timer = `${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+    }
+
     // hours = `${hours}`.padStart(2, '0');
     // minutes = `${minutes}`.padStart(2, '0');
     // seconds = `${seconds}`.padStart(2, '0');
 
-    timer = `hours: ${hours}, minutes: ${minutes}, seconds: ${seconds}`;
     console.log(timer);
 }

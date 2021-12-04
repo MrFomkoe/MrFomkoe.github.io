@@ -62,6 +62,7 @@ function main(timestamp) {
 }
 
 function start() {
+  startTimer();
   playSnakeTheme();
   window.requestAnimationFrame(main); // http://www.javascriptkit.com/javatutors/requestanimationframe.shtml
   document.getElementById('snakeStart').classList.add('none');
@@ -98,9 +99,11 @@ function isCollide(snake) {
 function gameEngine() {
   if (isCollide(snakeArr)) {
     inputDir = { x: 0, y: 0 };
-    alert('Game Over, Press any key to play again!');
+    // alert('Game Over, Press any key to play again!');
     snakeArr = [{ x: 13, y: 15 }];
     score = 0;
+
+    finishedSnake.style.display = 'flex';
   }
 
   // If snake has eaten the food, increment the score, increment speed and regenerate the food

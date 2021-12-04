@@ -177,7 +177,7 @@ function addWizard(characterBox){
 // function that changes opacity for all elements passed in function
 function increaseOpacityCharacter(element){
     element.animate([
-        {opacity: 1,},
+        {opacity: 0.9,},
     ],  {
         duration: 2000,
         iterations: 1,
@@ -223,5 +223,23 @@ function runMemoryGame(wrapperContent){
         increaseOpacityCharacter(memoryGameContainer);       
         }, 4500);
 
+}
+
+let timePlayed = document.querySelector('.timePlayed');
+let finalScore = document.querySelector('.finalScore');
+let finishedSnake = document.getElementById('finishedSnake');
+
+function addCharactersToSlideSeven(){
+    stopTimer();
+    let wrapperContentSlideSeven = document.querySelector('.slide-wrapper-content-seven');
+    let activeCharacterSeven = document.querySelector('.activeCharacterSeven');
+    let wizardSlideSeven = document.querySelector('.wizardSlideSeven');
+    timePlayed.innerHTML = timer;
+    finalScore.innerHTML = score;
+    activeCharacterSeven.src = characters[activeCharacter].src;
+    increaseOpacityCharacter(wrapperContentSlideSeven);
+    increaseOpacityCharacter(activeCharacterSeven);
+    increaseOpacityCharacter(wizardSlideSeven);
+    finishedSnake.style.display = 'none';
 }
 

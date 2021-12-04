@@ -11,6 +11,9 @@ let close = document.querySelectorAll('.close');
 btn.forEach(element => {
   element.addEventListener('click', () => {
     let number = Array.prototype.indexOf.call(btn, element);
+    if (number == 3){
+      number = 2;
+    }
     modal[number].style.display = "flex";
     console.log(number);
   })
@@ -18,7 +21,6 @@ btn.forEach(element => {
 
 close.forEach(element => {
   element.addEventListener('click', () => {
-    console.log(element);
     modal.forEach(element => {
       element.style.display = "none";
     })

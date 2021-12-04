@@ -122,6 +122,7 @@
           onclick="addCharacter(wrapperContentSlideFour, activeCharacterSlideFour); addName()"
           ><h1>start</h1></a
         >
+        
         <!-- <a href="#slide-4" class="btn primary size--s" onclick="nextGameMemoryGame()"><h1>start</h1></a> -->
       </div>
 
@@ -203,8 +204,8 @@
               The old man gave you a key to another room in the dungeon, and now you can continue your adventure.</p><br>
             <a href="#slide-5" class="btn primary" onclick="nextGameMemoryGame(), playMainTheme()"><h4>CONTINUE TO NEXT GAME</h4></a>
           </div>
-      
         </div>
+
       </div>
       <!-- 5. SLAIDS -->
       <div class="slideGame" id="slide-5">
@@ -263,7 +264,7 @@
                 You know, the funny thing is that you can take only that much that you can carry at once.<br>
                 And now we'll see how much treasure you can take, <span class="playerNameSpan"></span>. Good luck!"<br>
                 The wizard opens the next room in the dungeon where you can see myriad treasures. One last thing left to do - to take as much as possible.</p><br>
-              <a href="#slide-6" class="btn primary closeModal"><h4>CONTINUE TO NEXT GAME</h4></a>
+              <a href="#slide-6" class="btn primary closeModal" ><h4>CONTINUE TO NEXT GAME</h4></a>
           </div>
         </div>
 
@@ -279,11 +280,33 @@
           <div id="scoreBox">Score: -</div>
           <div id="hiscoreBox">HiScore: -</div>
         </div>
+
+        <div id="finishedSnake" class="modal">
+          <div class="modal-content">
+              <p>So <span class="playerNameSpan"></span>, you've taken as much gold as you could. Yet, the wizard is generous today and lets you try again.</p>
+              <a class="btn primary closeModal"><h4>TRY AGAIN</h4></a>
+              <a href="#slide-7" class="btn primary closeModal" onclick="addCharactersToSlideSeven()"><h4>FINISH GAME</h4></a>
+          </div>
+        </div>
+
+
       </div>
       <!-- 7. SLAIDS -->
+      <div class="slide" id="slide-7">
+        <img src="./media/pictures/wizard.png" class="wizardSlideSeven">
+        <img src="" class="activeCharacterSeven">
+        <div class="content-wrapper slide-wrapper-content-seven size--s">
+          <p class="margin-bottom--16">
+            Congratulations <span class="playerNameSpan"></span>, you've passed all the trials I've prepared for you!<br>
+            It took you <span class="timePlayed"></span> and you've managed to earn <span class="finalScore"></span> coins!<br>
+            I'll be glad to see you here again! Farewell!
+            <button type="button" class="myBtn btn primary size--m">
+              <h2>scoreboard</h2>
+            </button>
+          </p>
+      </div>
+      </div>
     </div>
-    <!-- 7. SLAIDS -->
-  </div>
   <script src="./modal.js"></script>
   <script src="./index.js"></script>
   <script src="./rps.js"></script>
