@@ -167,7 +167,7 @@
                 stopTimer();
                 console.log('your time so far is: ', timer);
             }
-            if (computerScore == 5){
+            if (computerScore == 2){
                 youLost++;
 
                 // conditionals to show how many times player has lost
@@ -178,6 +178,7 @@
                 }
                 if (youLost == 2){
                     modalLostButContinue.style.display = 'flex';
+                    opacityFade();
                     stopTimer();
                     console.log('your time so far is: ', timer);
                 }
@@ -217,6 +218,7 @@
             modalWon.style.display = 'none';
             modalLostButContinue.style.display = 'none';
             startTimer();
+            opacityFade();
             console.log('your time so far is: ', timer);
         }
 
