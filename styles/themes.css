@@ -8,7 +8,8 @@
   visibility: visible;
   line-height: 1;
   box-shadow: 3px 3px 6px -2px black;
-}
+  user-select: none;
+  }
 
 .btn:hover {
   transform: translate(1px, 1px);
@@ -52,6 +53,10 @@
   opacity: 0.8;
   transform: scale(0.96);
   transition: all 0.1s ease-out;
+}
+
+.size--xl {
+  min-width: 60%;
 }
 
 .size--l {
