@@ -1,3 +1,6 @@
+// import axios from 'axios';
+// const axios = require('axios').default
+
 const btnAboutUs = document.getElementById('about-us');
 const btnLogin = document.getElementById('login');
 const btnScoreboard = document.getElementById('scoreboard');
@@ -163,12 +166,12 @@ function addWizard(characterBox) {
 
 // function that changes opacity for all elements passed in function
 function increaseOpacityCharacter(element){
-    element.animate([
-        {opacity: 0.9,},
-    ],  {
-        duration: 2000,
-        iterations: 1,
-        fill: 'forwards'})
+  element.animate([
+    {opacity: 0.9,},
+  ],  {
+    duration: 2000,
+    iterations: 1,
+    fill: 'forwards'})
 }
 
 function nextGameMemoryGame() {
@@ -215,16 +218,74 @@ let finalScore = document.querySelector('.finalScore');
 let finishedSnake = document.getElementById('finishedSnake');
 
 function addCharactersToSlideSeven(){
-    stopTimer();
-    let wrapperContentSlideSeven = document.querySelector('.slide-wrapper-content-seven');
-    let activeCharacterSeven = document.querySelector('.activeCharacterSeven');
-    let wizardSlideSeven = document.querySelector('.wizardSlideSeven');
-    timePlayed.innerHTML = timer;
-    finalScore.innerHTML = score;
-    activeCharacterSeven.src = characters[activeCharacter].src;
-    increaseOpacityCharacter(wrapperContentSlideSeven);
-    increaseOpacityCharacter(activeCharacterSeven);
-    increaseOpacityCharacter(wizardSlideSeven);
-    finishedSnake.style.display = 'none';
+  stopTimer();
+  let wrapperContentSlideSeven = document.querySelector('.slide-wrapper-content-seven');
+  let activeCharacterSeven = document.querySelector('.activeCharacterSeven');
+  let wizardSlideSeven = document.querySelector('.wizardSlideSeven');
+  timePlayed.innerHTML = timer;
+  finalScore.innerHTML = score;
+  activeCharacterSeven.src = characters[activeCharacter].src;
+  increaseOpacityCharacter(wrapperContentSlideSeven);
+  increaseOpacityCharacter(activeCharacterSeven);
+  increaseOpacityCharacter(wizardSlideSeven);
+  finishedSnake.style.display = 'none';
 }
 
+iegutVirsrakstus();
+
+// let userData = {
+//   email: 'vitalijs@fromFrontend.lv',
+//   userName: 'VitalijsP',
+//   firstName: 'from Frontend',
+//   lastName: 'to Backend',
+// };
+
+// function sendToTheServer() {
+//   let data = JSON.stringify(userData);
+//   xmlhttp.open('POST', 'http://localhost:3000/add-user');
+//   xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
+//   xmlhttp.send(data);
+// }
+
+// console.log(sendToTheServer());
+
+function iegutVirsrakstus() {
+  let url = 'http://localhost:3000/';
+  fetch(url)
+    .then(function (response) {
+      console.log('response: ', response);
+      return response.json();
+    })
+    .then(function (data) {
+      console.log('data: ', data);
+    });
+}
+
+async function makePostRequest() {
+  let userData = {
+    email: 'vitalijs@fromFrontend.lv',
+    userName: 'VitalijsP',
+    firstName: 'from Frontend',
+    lastName: 'to Backend',
+  };
+
+
+  await axios
+    .post('/add-user', userData)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  // let res = await axios.post('http://localhost:3000/add-user', params);
+
+  console.log(res.data);
+}
+
+makePostRequest();
+
+// The example posts a new user.
+// let res = await axios.post('http://localhost:3000/users/', params);
+// The post parameters are passed as the second parameter to the post method.
