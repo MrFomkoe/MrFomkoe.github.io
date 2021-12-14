@@ -217,8 +217,13 @@ let timePlayed = document.querySelector('.timePlayed');
 let finalScore = document.querySelector('.finalScore');
 let finishedSnake = document.getElementById('finishedSnake');
 
+
+
+
 function addCharactersToSlideSeven(){
+  let playerName = document.getElementById('name').value
   stopTimer();
+  
   let wrapperContentSlideSeven = document.querySelector('.slide-wrapper-content-seven');
   let activeCharacterSeven = document.querySelector('.activeCharacterSeven');
   let wizardSlideSeven = document.querySelector('.wizardSlideSeven');
@@ -229,6 +234,14 @@ function addCharactersToSlideSeven(){
   increaseOpacityCharacter(activeCharacterSeven);
   increaseOpacityCharacter(wizardSlideSeven);
   finishedSnake.style.display = 'none';
+
+  let result = {
+    name: playerName,
+    time: timer,
+    score: score
+  }
+  console.log("result: ", result)
+
 }
 
 iegutVirsrakstus();

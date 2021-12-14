@@ -29,7 +29,7 @@ function main(timestamp) {
   gameEngine();
 }
 
-function moveAndPlaySaound(x, y) {
+function moveAndPlaySound(x, y) {
   moveSound.play();
   inputDir.x = x;
   inputDir.y = y;
@@ -39,55 +39,60 @@ function start() {
   window.addEventListener('keydown', (e) => {
     console.log(e);
   });
-  window.addEventListener('keydown', (e) => {
-    inputDir = { x: 0, y: 1 };
+  window.addEventListener('keydown', movement);
 
-    switch (e.key) {
-      case 'ArrowUp':
-        moveAndPlaySaound(0, -1);
-        break;
-
-      case 'w':
-        moveAndPlaySaound(0, -1);
-        break;
-
-      case 'ArrowDown':
-        moveAndPlaySaound(0, 1);
-        break;
-
-      case 's':
-        moveAndPlaySaound(0, 1);
-        break;
-
-      case 'ArrowLeft':
-        moveAndPlaySaound(-1, 0);
-        break;
-
-      case 'a':
-        moveAndPlaySaound(-1, 0);
-        break;
-
-      case 'ArrowRight':
-        moveAndPlaySaound(1, 0);
-        break;
-
-      case 'd':
-        moveAndPlaySaound(1, 0);
-        break;
-
-      case 'Enter':
-        start();
-        break;
-
-      default:
-        console.log('Nedarbojas šie taustiņi');
-        break;
-    }
-  });
   startTimer();
   playSnakeTheme();
   window.requestAnimationFrame(main); // http://www.javascriptkit.com/javatutors/requestanimationframe.shtml
   document.getElementById('snakeStart').classList.add('none');
+}
+
+function movement(e) {
+  switch (e.key) {
+    case 'ArrowUp':
+      moveAndPlaySound(0, -1);
+      break;
+
+    case 'w':
+      moveAndPlaySound(0, -1);
+      break;
+
+    case 'ArrowDown':
+      moveAndPlaySound(0, 1);
+      break;
+
+    case 's':
+      moveAndPlaySound(0, 1);
+      break;
+
+    case 'ArrowLeft':
+      moveAndPlaySound(-1, 0);
+      break;
+
+    case 'a':
+      moveAndPlaySound(-1, 0);
+      break;
+
+    case 'ArrowRight':
+      moveAndPlaySound(1, 0);
+      break;
+
+    case 'd':
+      moveAndPlaySound(1, 0);
+      break;
+
+    default:
+      console.log('Nedarbojas šie taustiņi');
+      break;
+  }
+}
+
+function restartSnake() {
+  start();
+  score = 0;
+  speed = 5;
+  scoreBox.innerHTML = 'Score: ' + score;
+  finishedSnake.style.display = 'none';
 }
 
 function isCollide(snake) {
@@ -110,13 +115,13 @@ function isCollide(snake) {
 function gameEngine() {
   if (isCollide(snakeArr)) {
     inputDir = { x: 0, y: 0 };
-    // alert('Game Over, Press any key to play again!');
     snakeArr = [{ x: 13, y: 15 }];
-    score = 0;
 
     finishedSnake.style.display = 'flex';
+    window.removeEventListener('keydown', movement);
+    stopTimer();
   }
-
+  console.log(score);
   // If snake has eaten the food, increment the score, increment speed and regenerate the food
   if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
     foodSound.play();
