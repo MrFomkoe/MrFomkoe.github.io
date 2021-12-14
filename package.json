@@ -1,33 +1,23 @@
 {
-  "name": "server.js",
+  "name": "javascript-group-project",
   "version": "1.0.0",
-  "description": "Server for fita javascript group project",
-  "main": "server.js",
+  "description": "1 Timer - check how to code timer with stops, resumes. Need to get data from timer and write it in a file.",
+  "main": "./index.js",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MrFomkoe/Javascript-group-project.git"
   },
-  "keywords": [
-    "fita"
-  ],
-  "author": "Vitalijs & Romans",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MrFomkoe/Javascript-group-project/issues"
   },
   "homepage": "https://github.com/MrFomkoe/Javascript-group-project#readme",
   "dependencies": {
-    "body-parser": "^1.19.1",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mongodb": "^4.2.1",
-    "mongoose": "^6.1.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
+    "axios": "^0.24.0"
   }
 }
