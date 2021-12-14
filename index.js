@@ -244,6 +244,14 @@ function addCharactersToSlideSeven(){
 
 }
 
+
+
+function reloadGame(){
+  setTimeout(function(){
+    window.location.reload();  
+  }, 700);
+}
+
 iegutVirsrakstus();
 
 // let userData = {
@@ -302,3 +310,4 @@ makePostRequest();
 // The example posts a new user.
 // let res = await axios.post('http://localhost:3000/users/', params);
 // The post parameters are passed as the second parameter to the post method.
+
